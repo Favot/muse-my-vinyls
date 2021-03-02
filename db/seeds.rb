@@ -8,21 +8,3 @@
 
 
 
-USERS = [
-    {
-      email: "favot@gmail.com",
-      password: "1234",
-      first_name: "Corentin",
-      last_name: "Favot",
-    }
-  ]
-  VINYLS = [
-    {
-      title: ,
-      artist: ,
-      price_per_day: ,
-      description: ,
-      condition: ,
-      # user_id: ,
-    }
-  ]

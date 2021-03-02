@@ -1,16 +1,24 @@
 Rails.application.routes.draw do
-
+  # all visitor
   root to: 'pages#home'
   devise_for :users 
   
+  #  As renter 
+  resources :vinyls, only: %i[index show] do 
+    resources :rentings, only: [:create]
+  end
+  resources :rentings, only: %i[index]
 
-  resources :vinyls, only: %i[index show]
-  resources :renting, only: %i[index, create]
 
+  #  As owner 
   namespace :owner do
     resources :vinyls , only: %i[new create index]
-    resources :rentings, only: %i[new validate decline]
+    resources :rentings, only: %i[index] do
+      menber do
+        patch :validate 
+        patch :decline
+      end
+    end
   end
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
