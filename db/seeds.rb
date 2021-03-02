@@ -185,14 +185,11 @@ christophe_vinyl_5 = Vinyl.new(
   owner: christophe
 )
 
-
-
 file  = File.open(Rails.root.join('db/media/vinyls/alive.jpg'))
 
 christophe_vinyl_5.photo.attach(io: file, filename: 'alive.jpg', content_type: 'image/jpeg')
 
 christophe_vinyl_5.save!
-
 
 bastien_vinyl_1 = Vinyl.new(
   title: "Random access memories",
@@ -209,8 +206,6 @@ bastien_vinyl_1.photo.attach(io: file, filename: 'memories.jpg', content_type: '
 
 bastien_vinyl_1.save!
 
-
-
 bastien_vinyl_2 = Vinyl.new(
   title: "Discovery",
   artist: "Daft Punk",
@@ -226,8 +221,6 @@ bastien_vinyl_2.photo.attach(io: file, filename: 'discovery.jpg', content_type: 
 
 bastien_vinyl_2.save!
 
-
-
 corentin_vinyl_1 = Vinyl.new(
   title: "Untouchables",
   artist: "Korn",
@@ -236,7 +229,6 @@ corentin_vinyl_1 = Vinyl.new(
   condition: "Very good",
   owner: corentin
 )
-
 
 file  = File.open(Rails.root.join('db/media/vinyls/korn.jpg'))
 
