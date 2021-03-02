@@ -6,101 +6,114 @@
            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 8c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm0 6c-1.104 0-2-.897-2-2s.896-2 2-2 2 .897 2 2-.896 2-2 2zm0-12c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2.914 20.526c-2.625-.902-4.697-2.978-5.592-5.606l1.02-.127c.807 2.174 2.529 3.901 4.699 4.714l-.127 1.019zm.258-2.054c-1.723-.71-3.098-2.085-3.807-3.807l1.041-.13c.596 1.272 1.623 2.299 2.895 2.896l-.129 1.041zm8.095-9.007c-.598-1.272-1.625-2.3-2.896-2.896l.131-1.041c1.721.71 3.096 2.085 3.807 3.807l-1.042.13zm2.049-.256c-.814-2.157-2.529-3.869-4.691-4.677l.129-1.019c2.613.896 4.68 2.958 5.582 5.568l-1.02.128z"/></svg>
         </a>
       </li>
-
-
-
       <li class="nav-item">
-        <a href="#" class="nav-link">
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fad"
-            data-icon="cat"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="svg-inline--fa fa-cat fa-w-16 fa-9x"
-          >
-            <g class="fa-group">
-              <path
-                fill="currentColor"
-                d="M448 96h-64l-64-64v134.4a96 96 0 0 0 192 0V32zm-72 80a16 16 0 1 1 16-16 16 16 0 0 1-16 16zm80 0a16 16 0 1 1 16-16 16 16 0 0 1-16 16zm-165.41 16a204.07 204.07 0 0 0-34.59 2.89V272l-43.15-64.73a183.93 183.93 0 0 0-44.37 26.17L192 304l-60.94-30.47L128 272v-80a96.1 96.1 0 0 0-96-96 32 32 0 0 0 0 64 32 32 0 0 1 32 32v256a64.06 64.06 0 0 0 64 64h176a16 16 0 0 0 16-16v-16a32 32 0 0 0-32-32h-32l128-96v144a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16V289.86a126.78 126.78 0 0 1-32 4.54c-61.81 0-113.52-44.05-125.41-102.4z"
-                class="fa-secondary"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M376 144a16 16 0 1 0 16 16 16 16 0 0 0-16-16zm80 0a16 16 0 1 0 16 16 16 16 0 0 0-16-16zM131.06 273.53L192 304l-23.52-70.56a192.06 192.06 0 0 0-37.42 40.09zM256 272v-77.11a198.62 198.62 0 0 0-43.15 12.38z"
-                class="fa-primary"
-              ></path>
-            </g>
-          </svg>
-          <span class="link-text">Cats</span>
-        </a>
+        <div class="nav-link">
+          <% if user_signed_in? %>
+            <div class="one">123</div>
+          <% else %>
+            <%= link_to new_user_session_path do %>
+              <svg 
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fad"
+              data-icon="add"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg" 
+              xmlns:xlink="http://www.w3.org/1999/xlink" 
+              version="1.1" 
+              x="0px" 
+              y="0px" 
+              viewBox="0 0 100 125" 
+              class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
+              xml:space="preserve">
+              <g class="fa-group">
+                <path 
+                  class="fa-primary"
+                  fill="currentColor"
+                  d="M50,7.5C26.528,7.5,7.5,26.528,7.5,50S26.528,92.5,50,92.5S92.5,73.472,92.5,50S73.472,7.5,50,7.5z M63.893,55H55v8.893   c0,2.761-2.239,5-5,5s-5-2.239-5-5V55h-8.893c-2.761,0-5-2.239-5-5c0-2.762,2.239-5,5-5H45v-8.893c0-2.761,2.239-5,5-5s5,2.239,5,5   V45h8.893c2.761,0,5,2.238,5,5C68.893,52.761,66.654,55,63.893,55z"/>
+              </g>
+              </svg>
+              <span class="link-text">Add Vinyls</span>
+            <% end %>
+          <% end %>
+        </div>
       </li>
-
+      
       <li class="nav-item">
-        <a href="#" class="nav-link">
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fad"
-            data-icon="alien-monster"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 576 512"
-            class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
-          >
-            <g class="fa-group">
-              <path
-                fill="currentColor"
-                d="M560,128H528a15.99954,15.99954,0,0,0-16,16v80H480V176a15.99954,15.99954,0,0,0-16-16H416V96h48a16.00079,16.00079,0,0,0,16-16V48a15.99954,15.99954,0,0,0-16-16H432a15.99954,15.99954,0,0,0-16,16V64H368a15.99954,15.99954,0,0,0-16,16v48H224V80a15.99954,15.99954,0,0,0-16-16H160V48a15.99954,15.99954,0,0,0-16-16H112A15.99954,15.99954,0,0,0,96,48V80a16.00079,16.00079,0,0,0,16,16h48v64H112a15.99954,15.99954,0,0,0-16,16v48H64V144a15.99954,15.99954,0,0,0-16-16H16A15.99954,15.99954,0,0,0,0,144V272a16.00079,16.00079,0,0,0,16,16H64v80a16.00079,16.00079,0,0,0,16,16h48v80a16.00079,16.00079,0,0,0,16,16h96a16.00079,16.00079,0,0,0,16-16V432a15.99954,15.99954,0,0,0-16-16H192V384H384v32H336a15.99954,15.99954,0,0,0-16,16v32a16.00079,16.00079,0,0,0,16,16h96a16.00079,16.00079,0,0,0,16-16V384h48a16.00079,16.00079,0,0,0,16-16V288h48a16.00079,16.00079,0,0,0,16-16V144A15.99954,15.99954,0,0,0,560,128ZM224,320H160V224h64Zm192,0H352V224h64Z"
-                class="fa-secondary"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M160,320h64V224H160Zm192-96v96h64V224Z"
-                class="fa-primary"
-              ></path>
-            </g>
-          </svg>
-          <span class="link-text">Aliens</span>
-        </a>
-      </li>
-
+      <div  class="nav-link">
+        <%= link_to root_path do %>
+            <svg 
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fad"
+              data-icon="login"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg" 
+              xmlns:xlink="http://www.w3.org/1999/xlink" 
+              xml:space="preserve" 
+              version="1.1" 
+              style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" 
+              viewBox="0 0 399.88 456.4375" x="0px" y="0px" 
+              class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
+              >
+              
+              <g class="fa-group">
+                <path 
+                  class="fa-primary"
+                  fill="currentColor"
+                  d="M300.77 73.2l0 -9.73c0,-3.89 3.17,-7.07 7.07,-7.07l28.51 0c3.89,0 7.07,3.18 7.07,7.07l0 41.42 53.6 39.82c3.12,2.32 3.78,6.76 1.46,9.88l-16.9 22.8c-2.32,3.13 -6.77,3.79 -9.89,1.46l-23.09 -17.15 0 160.18c0,23.79 -19.47,43.26 -43.26,43.26l-57.88 0 0 -127.33c0,-8.72 -7.13,-15.85 -15.84,-15.85l-63.36 0c-8.71,0 -15.84,7.13 -15.84,15.85l0 127.33 -57.88 0c-23.79,0 -43.26,-19.47 -43.26,-43.26l0 -160.18 -23.09 17.15c-3.12,2.33 -7.57,1.67 -9.89,-1.46l-16.9 -22.8c-2.32,-3.12 -1.66,-7.56 1.46,-9.88l192.87 -143.29c2.54,-1.89 5.88,-1.89 8.42,0l96.62 71.78z"/>
+              </g>
+            </svg>
+            <span class="link-text">Home</span>
+          
+          <% end %>
+        </li>
+      </div>
       <li class="nav-item">
         <% if user_signed_in? %>
             <div class="one">123</div>
         <% else %>
-            <div class="two">something else</div>
+          <%= link_to new_user_session_path do %>
+            <div class="nav-link">
+              <svg 
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fad"
+                data-icon="login"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg" 
+                xmlns:xlink="http://www.w3.org/1999/xlink" 
+                xml:space="preserve"
+                version="1.1" 
+                x="0px" y="0px" 
+                viewBox="0 0 100 125" 
+                style="enable-background:new 0 0 100 100;" 
+                class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
+                  >
+                <g class="fa-group">
+                  <g class="fa-group">
+                    <circle 
+                    class="fa-primary"
+                    fill="currentColor" 
+                    cx="50" 
+                    cy="34.6" 
+                    r="15.5" />
+                  </g>
+                  <g>
+                    <path 
+                    class="fa-primary"
+                    fill="currentColor"
+                    d="M25.3,72c-1.8,4.4,1.4,9.3,6.2,9.3h37.8c4.8,0,8-4.9,6.2-9.3c-4.7-11.2-14.2-18.8-25.1-18.8S29.9,60.8,25.3,72z" />
+                  </g>
+                </g>
+              </svg>
+                <span class="link-text">Login</span>
+            </div> 
+          <% end %>
         <% end %>
       </li>
     </ul>
   </nav>
-<%# 
-        <a href="#" class="nav-link">
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fad"
-            data-icon="space-station-moon-alt"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="svg-inline--fa fa-space-station-moon-alt fa-w-16 fa-5x"
-          >
-            <g class="fa-group">
-              <path
-                fill="currentColor"
-                d="M501.70312,224H448V160H368V96h48V66.67383A246.86934,246.86934,0,0,0,256,8C119.03125,8,8,119.0332,8,256a250.017,250.017,0,0,0,1.72656,28.26562C81.19531,306.76953,165.47656,320,256,320s174.80469-13.23047,246.27344-35.73438A250.017,250.017,0,0,0,504,256,248.44936,248.44936,0,0,0,501.70312,224ZM192,240a80,80,0,1,1,80-80A80.00021,80.00021,0,0,1,192,240ZM384,343.13867A940.33806,940.33806,0,0,1,256,352c-87.34375,0-168.71094-11.46094-239.28906-31.73633C45.05859,426.01953,141.29688,504,256,504a247.45808,247.45808,0,0,0,192-91.0918V384H384Z"
-                class="fa-secondary"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M256,320c-90.52344,0-174.80469-13.23047-246.27344-35.73438a246.11376,246.11376,0,0,0,6.98438,35.998C87.28906,340.53906,168.65625,352,256,352s168.71094-11.46094,239.28906-31.73633a246.11376,246.11376,0,0,0,6.98438-35.998C430.80469,306.76953,346.52344,320,256,320Zm-64-80a80,80,0,1,0-80-80A80.00021,80.00021,0,0,0,192,240Zm0-104a24,24,0,1,1-24,24A23.99993,23.99993,0,0,1,192,136Z"
-                class="fa-primary"
-              ></path>
-            </g>
-          </svg>
-          <span class="link-text">Space</span>
-        </a> %>
+
+        
     
