@@ -1,13 +1,6 @@
 {
   "apps": [
     {
-      "app_id": "app_ba7e186b-bb0d-4b12-9e01-43e9fde7710b",
-      "org_id": "user_ad938b61-d04c-4ba7-ba80-b5f26485fc7e",
-      "deploy_url": "https://push-par-clevercloud-customers.services.clever-cloud.com/app_ba7e186b-bb0d-4b12-9e01-43e9fde7710b.git",
-      "name": "muse-myself",
-      "alias": "muse-myself"
-    },
-    {
       "app_id": "app_3fad2f10-15d4-40f3-bc74-ee389397d797",
       "org_id": "user_ad938b61-d04c-4ba7-ba80-b5f26485fc7e",
       "deploy_url": "https://push-par-clevercloud-customers.services.clever-cloud.com/app_3fad2f10-15d4-40f3-bc74-ee389397d797.git",
