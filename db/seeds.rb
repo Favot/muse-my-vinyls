@@ -303,8 +303,3 @@ renting_5 = Renting.create!(
 )
 
 puts "Finished!"
-
-
-
-
-# total_price: (end_date - start_date) * price_per_day
