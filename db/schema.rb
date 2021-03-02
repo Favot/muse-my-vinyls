@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_102146) do
+ActiveRecord::Schema.define(version: 2021_03_02_102946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "rentings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.string "status", default: "Pending"
+    t.integer "total_price"
+    t.bigint "renter_id", null: false
+    t.bigint "vinyl_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["renter_id"], name: "index_rentings_on_renter_id"
+    t.index ["vinyl_id"], name: "index_rentings_on_vinyl_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,4 +42,19 @@ ActiveRecord::Schema.define(version: 2021_03_02_102146) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vinyls", force: :cascade do |t|
+    t.string "title"
+    t.string "artist"
+    t.integer "price_per_day"
+    t.text "description"
+    t.string "condition"
+    t.bigint "owner_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["owner_id"], name: "index_vinyls_on_owner_id"
+  end
+
+  add_foreign_key "rentings", "users", column: "renter_id"
+  add_foreign_key "rentings", "vinyls"
+  add_foreign_key "vinyls", "users", column: "owner_id"
 end
