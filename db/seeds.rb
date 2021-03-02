@@ -131,7 +131,7 @@ corentin_vinyl_1 = Vinyl.create!(
   artist: "Korn",
   price_per_day: 8,
   description: "Untouchables debuted at number two on the Billboard 200 with 434,000 copies sold during its first week.",
-  condition: "Very Good",
+  condition: "Very good",
   owner: corentin
 )
 
