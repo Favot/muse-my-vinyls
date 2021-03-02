@@ -1,7 +1,7 @@
 class Vinyl < ApplicationRecord
   CONDITION = ['Acceptable', 'Good', 'Very good', 'Like new']
 
-  belongs_to :owner, class_name: 'Users'
+  belongs_to :owner, class_name: 'User'
   has_many :rentings
 
   has_one_attached :photo
