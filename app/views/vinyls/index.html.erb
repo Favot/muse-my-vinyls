@@ -1,7 +1,7 @@
-<h1>All Vinyls</h1>
+<!-- render '_search' -->
 
 <% @vinyls.each do |vinyl| %>
-  <%= link_to vinyl_path(vinyl.id) do %>
+  <%= link_to vinyl_path(vinyl) do %>
     <div class="card-product">
       <!-- vinyl.photo -->
       <% if vinyl.photo.attached? %>
@@ -20,7 +20,3 @@
     </div>
   <% end %>
 <% end %>
-
-
-
-
