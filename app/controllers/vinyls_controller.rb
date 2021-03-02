@@ -3,7 +3,5 @@ class VinylsController < ApplicationController
     @vinyl = Vinyl.find(params[:id])
   end
 
-  def create
 
-  end
 end
