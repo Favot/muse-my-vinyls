@@ -1,0 +1,19 @@
+
+
+<div class="card">
+  <img
+    src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+    class="card-img-top"
+    alt= <% vinyl.description %>
+  />
+
+  <% @vinyls.each do |vinyl| %>
+    <div class="card-body">
+      <h5 class="card-title"><%= vinyl.title %></h5>
+      <h5 class="card-title"><%= vinyl.artist %></h5>
+      <p class="card-text"> <% vinyl.description %></p>
+      <a href="#!" class="btn btn-primary">Button</a>
+  <% end %>
+
+  </div>
+</div>
