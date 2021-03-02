@@ -4,6 +4,8 @@ class Vinyl < ApplicationRecord
   belongs_to :owner, class_name: 'Users'
   has_many :rentings
 
+  has_one_attached :photo
+
   validates :condition, inclusion: { in: CONDITION }
 
   validates :title, presence: true

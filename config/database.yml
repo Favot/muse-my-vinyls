@@ -81,3 +81,6 @@ test:
 production:
   <<: *default
   url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
+
+  cloudinary:
+    service: Cloudinary

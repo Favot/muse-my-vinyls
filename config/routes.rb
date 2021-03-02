@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   namespace :owner do
     resources :vinyls , only: %i[new create index]
     resources :rentings, only: %i[index] do
-      menber do
+      member do
         patch :validate 
         patch :decline
       end

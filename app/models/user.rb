@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_one_attached :photo
+
   #  As Owner
   has_many :vinyls, foreign_key: :owner_id
   has_many :incomming_rentings, through: :vinyls, source: :rentings
