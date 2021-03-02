@@ -1,3 +1,4 @@
+
 puts "Cleaning all databases..."
 
 Renting.destroy_all
@@ -294,3 +295,4 @@ renting_5 = Renting.create!(
 )
 
 puts "Finished!"
+
