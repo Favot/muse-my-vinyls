@@ -1,0 +1,25 @@
+
+<div class="container d-flex justify-content-center">
+  <div class="card text-white bg-dark" style="width: 18rem;">
+  <img src="https://source.unsplash.com/random/300x300" class="card-img-top" alt="...">
+  <div class="card-body">
+    <div class="row d-flex justify-content-between">
+      <div class="col-lg-6">
+        <h5 class="card-title"><%= @vinyl.title %></h5>
+        <p class="card-title"><%= @vinyl.artist %></p>
+      </div>
+      <div>
+        <p class="card-text"> <%= @vinyl.price_per_day %> €</p>
+        <p class="card-text"> <%= @vinyl.condition %></p>
+      </div>
+    </div>
+    <p class="card-text"> <%= @vinyl.description %></p>
+    <div class= "d-flex flex-column bd-highlight">
+      <a href="#!" type="button" class="btn btn-success m-1">Request</a>
+      <a href="#!" type="button" class="btn btn-light m-1">Cancel</a>
+    </div>
+  </div>
+</div>
+</div>
+
+

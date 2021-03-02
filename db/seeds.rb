@@ -1,3 +1,4 @@
+
 puts "Cleaning all databases..."
 
 Renting.destroy_all
@@ -21,7 +22,7 @@ lise.photo.attach(io: file, filename: 'lise.png', content_type: 'image/png')
 
 lise.save!
 
-lise = User.last
+
 
 bastien = User.new(
   email: "bastien@example.com",
@@ -37,7 +38,7 @@ bastien.photo.attach(io: file, filename: 'bastien.jpg', content_type: 'image/jpe
 
 bastien.save!
 
-bastien = User.last
+
 
 
 christophe = User.new(
@@ -50,11 +51,11 @@ christophe = User.new(
 
 file  = File.open(Rails.root.join('db/media/owners/christophe.jpg'))
 
-bastien.photo.attach(io: file, filename: 'christophe.jpg', content_type: 'image/jpeg')
+christophe.photo.attach(io: file, filename: 'christophe.jpg', content_type: 'image/jpeg')
 
 christophe.save!
 
-christophe = User.last
+
 
 corentin = User.new(
   email: "corentin@example.com",
@@ -69,7 +70,6 @@ corentin.photo.attach(io: file, filename: 'corentin.jpg', content_type: 'image/j
 
 corentin.save!
 
-corentin = User.last
 
 
 puts "Seeding some vinyls..."
@@ -186,14 +186,11 @@ christophe_vinyl_5 = Vinyl.new(
   owner: christophe
 )
 
-
-
 file  = File.open(Rails.root.join('db/media/vinyls/alive.jpg'))
 
 christophe_vinyl_5.photo.attach(io: file, filename: 'alive.jpg', content_type: 'image/jpeg')
 
 christophe_vinyl_5.save!
-
 
 bastien_vinyl_1 = Vinyl.new(
   title: "Random access memories",
@@ -210,8 +207,6 @@ bastien_vinyl_1.photo.attach(io: file, filename: 'memories.jpg', content_type: '
 
 bastien_vinyl_1.save!
 
-
-
 bastien_vinyl_2 = Vinyl.new(
   title: "Discovery",
   artist: "Daft Punk",
@@ -227,8 +222,6 @@ bastien_vinyl_2.photo.attach(io: file, filename: 'discovery.jpg', content_type: 
 
 bastien_vinyl_2.save!
 
-
-
 corentin_vinyl_1 = Vinyl.new(
   title: "Untouchables",
   artist: "Korn",
@@ -238,12 +231,11 @@ corentin_vinyl_1 = Vinyl.new(
   owner: corentin
 )
 
-
 file  = File.open(Rails.root.join('db/media/vinyls/korn.jpg'))
 
-bastien_vinyl_2.photo.attach(io: file, filename: 'korn.jpg', content_type: 'image/jpeg')
+corentin_vinyl_1.photo.attach(io: file, filename: 'korn.jpg', content_type: 'image/jpeg')
 
-bastien_vinyl_2.save!
+corentin_vinyl_1.save!
 
 puts "Seeding some rentings..."
 
@@ -303,3 +295,4 @@ renting_5 = Renting.create!(
 )
 
 puts "Finished!"
+
