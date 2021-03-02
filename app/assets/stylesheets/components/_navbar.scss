@@ -33,10 +33,6 @@
   width: 100%;
 }
 
-.nav-item:last-child {
-  margin-top: auto;
-}
-
 .nav-link {
   display: flex;
   align-items: center;
@@ -120,6 +116,7 @@
 
   .navbar-nav {
     flex-direction: row;
+    width: 100%;
   }
 
   .nav-link {
@@ -153,6 +150,10 @@
 
   .navbar:hover .logo-text {
     left: 0px;
+  }
+
+  .nav-item:last-child {
+    margin-top: auto;
   }
 }
 
