@@ -1,0 +1,29 @@
+.form-auth {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.auth-btn {
+  border-radius: 15px;
+  margin-bottom: 8px;
+}
+
+.auth-link {
+  margin: 8px;
+  padding: 8px;
+  height: fit-content;
+}
+
+.auth-link a {
+  margin: 8px;
+}
+
+@media only screen and (min-width: 600px) {
+  .form-auth {
+    max-width: 450px;
+    margin-left: 450px;
+  }
+}
