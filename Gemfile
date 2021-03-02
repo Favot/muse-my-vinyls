@@ -65,5 +65,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #  extra Gem 
 
 # Gem to manager login 
-
 gem 'devise'
+
+# Gem to handel Image
+
+gem 'cloudinary', '~> 1.16.0'
