@@ -3,6 +3,7 @@
   border-radius: 8px;
   height: 130px;
   width: 130px;
+  margin: 20px auto;
 }
 
 
@@ -28,6 +29,10 @@ a:active .card-product{
   justify-content: space-between;
   margin: 15px;
   border-radius: 8px;
+
+  .card-big{
+    height: 160px;
+  }
 }
 
 .card-product img {
