@@ -1,25 +1,43 @@
 
 <div class="container d-flex justify-content-center">
-  <div class="card text-white bg-dark" style="width: 18rem;">
-  <img src="https://source.unsplash.com/random/300x300" class="card-img-top" alt="...">
-  <div class="card-body">
-    <div class="row d-flex justify-content-between">
-      <div class="col-lg-6">
-        <h5 class="card-title"><%= @vinyl.title %></h5>
-        <p class="card-title"><%= @vinyl.artist %></p>
+  <div class="card text-white bg-dark mt-2" style="width: 18rem;">
+    <!-- vinyl.photo -->
+      <% if @vinyl.photo.attached? %>
+        <%= cl_image_tag @vinyl.photo.key, width: 110, height: 110, crop: :fill %>
+      <% else %>
+        <%= image_tag "https://via.placeholder.com/110" %>
+      <% end %>
+    <div class="card-body">
+      <div class="row d-flex justify-content-between">
+        <div class="col-lg-6">
+          <h5 class="card-title"><%= @vinyl.title %></h5>
+          <p class="card-title"><%= @vinyl.artist %></p>
+        </div>
+        <div>
+          <p class="card-text"> <%= @vinyl.price_per_day %> €/day</p>
+          <p class="card-text"> <%= @vinyl.condition %></p>
+        </div>
       </div>
-      <div>
-        <p class="card-text"> <%= @vinyl.price_per_day %> €</p>
-        <p class="card-text"> <%= @vinyl.condition %></p>
-      </div>
-    </div>
-    <p class="card-text"> <%= @vinyl.description %></p>
-    <div class= "d-flex flex-column bd-highlight">
-      <a href="#!" type="button" class="btn btn-success m-1">Request</a>
-      <a href="#!" type="button" class="btn btn-light m-1">Cancel</a>
+      <p class="card-text"> <%= @vinyl.description %></p>
+      <div class= "d-flex flex-column bd-highlight">
+        <%= simple_form_for [ @vinyl, @renting ] do |f| %>
+          <%= f.input :start_date, as: :date, html5: true %>
+          <%= f.input :end_date, as: :date, html5: true %>
+          <%= f.submit "Request", class: "btn btn-success" %>
+        <% end %>
+        <!-- <p data-price-per-day="<%= @vinyl.price_per_day %>" id="total-price">price is : </p> -->
+        <%= link_to 'Cancel', vinyls_path, class: "btn btn-light mt-2" %>
     </div>
   </div>
 </div>
 </div>
+
+
+<!-- add eventlistener sur chaque input -->
+<!-- si les input sont remplis on récupère la value -->
+<!-- convertir la valeur de l'input (string) en DATES js -->
+<!-- calculer le nombre de jours -->
+<!-- multiplier les jours par le price_per_day -->
+<!-- retourner le résultats dans une div InnerHTML -->
 
 

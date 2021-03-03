@@ -1,10 +1,14 @@
+.card{
+  margin-top:1.5rem;
+}
+
 .card-title{
   line-height: 1;
 }
 
 .card-text{
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .card-text:first-child {
@@ -21,5 +25,9 @@
     color: white;
     border: solid white 1px;
     padding: 3px;
+    text-align: center;
 }
 
+.btn{
+  width: 100%;
+}
