@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   #  As Owner
   has_many :vinyls, foreign_key: :owner_id
-  has_many :incomming_rentings, through: :vinyls, source: :rentings
+  has_many :incoming_rentings, through: :vinyls, source: :rentings
 
   # As renter
   has_many :rentings, foreign_key: :renter_id
