@@ -1,0 +1,5 @@
+<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="add" role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x" xml:space="preserve">
+    <g class="fa-group">
+        <path class="fa-primary" fill="currentColor" d="M50,7.5C26.528,7.5,7.5,26.528,7.5,50S26.528,92.5,50,92.5S92.5,73.472,92.5,50S73.472,7.5,50,7.5z M63.893,55H55v8.893   c0,2.761-2.239,5-5,5s-5-2.239-5-5V55h-8.893c-2.761,0-5-2.239-5-5c0-2.762,2.239-5,5-5H45v-8.893c0-2.761,2.239-5,5-5s5,2.239,5,5   V45h8.893c2.761,0,5,2.238,5,5C68.893,52.761,66.654,55,63.893,55z" />
+    </g>
+</svg>

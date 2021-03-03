@@ -11,9 +11,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
 @import "components/card";
-
 @import "components/auth";
 
 :root {
@@ -21,8 +19,8 @@
   font-family: "Open Sans";
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
+  --bg-primary: #343490;
+  --bg-secondary: #1a4e1e;
   --transition-speed: 600ms;
 }
 
