@@ -1,51 +1,94 @@
 <!-- Profile -->
 
 <div class="card-profile">
-<%= cl_image_tag current_user.photo.key, width: 130, height: 130, crop: :fill %>
+  <%= cl_image_tag current_user.photo.key, width: 130, height: 130, crop: :fill %>
 </div>
+
 <h4 class="text-center">
-<%= current_user.first_name.capitalize %>
-<%= current_user.last_name.capitalize %>
+  <%= current_user.first_name.capitalize %>
+  <%= current_user.last_name.capitalize %>
 </h4>
 
+<!-- TO DO: Tabs -->
 
-<!-- Tabs -->
-
-<ul class="list-inline tabs-underlined">
-  <li>
-    <a href="#" class="tab-underlined active">Bookings</a>
-  </li>
-  <li>
-    <a href="#" class="tab-underlined">Requests</a>
-  </li>
-  <li>
-    <a href="#" class="tab-underlined">Conversations</a>
-  </li>
-</ul>
-
-
-<!--  -->
+<!-- Display Pending -->
+<h5>Pending Requests</h5>
 
 <% @rentings.each do |renting| %>
-  <%= link_to rentings_path do %>
+  <% if renting.status == "Pending" %>
+
     <div class="card-product">
       <!-- vinyl.photo -->
-      <%= image_tag "https://via.placeholder.com/110" %>
-      <!-- delete if when seeds.rb work -->
+      <% if renting.vinyl.photo.attached? %>
+        <%= cl_image_tag renting.vinyl.photo.key, width: 110, height: 110, crop: :fill %>
+      <% else %>
+        <%= image_tag "https://via.placeholder.com/110" %>
+      <% end %>
+      <!-- Text -->
       <div class="card-product-infos">
-        <h2>title</h2>
-        <p><%= renting.start_date %></p>
-        <p><%= renting.end_date %></p>
-        <p><%= renting.total_price %> €</p>
-        <p><%= renting.renter_id %></p>
-        <p><%= renting.vinyl_id %></p>
+        <h2><%= renting.vinyl.title %></h2>
+        <p><%= renting.start_date %> - <%= renting.end_date %></p>
+        <p>Owner: <%= renting.vinyl.owner.first_name %></p>
       </div>
       <div class="card-product-price">
-        <p><em><%= renting.status %></em></p>
+        <p><%= renting.total_price %> €</p>
       </div>
+
     </div>
-  <% end %>
+<% end %>
+<% end %>
+
+<!-- Display Accepted -->
+<h5>Accepted Requests</h5>
+<% @rentings.each do |renting| %>
+  <% if renting.status == "Accepted" %>
+
+    <div class="card-product">
+      <!-- vinyl.photo -->
+      <% if renting.vinyl.photo.attached? %>
+        <%= cl_image_tag renting.vinyl.photo.key, width: 110, height: 110, crop: :fill %>
+      <% else %>
+        <%= image_tag "https://via.placeholder.com/110" %>
+      <% end %>
+      <!-- Text -->
+      <div class="card-product-infos">
+        <h2><%= renting.vinyl.title %></h2>
+        <p><%= renting.start_date %> - <%= renting.end_date %></p>
+        <p>Owner: <%= renting.vinyl.owner.first_name %></p>
+      </div>
+      <div class="card-product-price">
+        <p><%= renting.total_price %> €</p>
+      </div>
+
+    </div>
+<% end %>
+<% end %>
+
+<!-- Display Declined -->
+<h5>Declined Requests</h5>
+<% @rentings.each do |renting| %>
+  <% if renting.status == "Declined" %>
+
+    <div class="card-product">
+      <!-- vinyl.photo -->
+      <% if renting.vinyl.photo.attached? %>
+        <%= cl_image_tag renting.vinyl.photo.key, width: 110, height: 110, crop: :fill %>
+      <% else %>
+        <%= image_tag "https://via.placeholder.com/110" %>
+      <% end %>
+      <!-- Text -->
+      <div class="card-product-infos">
+        <h2><%= renting.vinyl.title %></h2>
+        <p><%= renting.start_date %> - <%= renting.end_date %></p>
+        <p>Owner: <%= renting.vinyl.owner.first_name %></p>
+      </div>
+      <div class="card-product-price">
+        <p><%= renting.total_price %> €</p>
+      </div>
+
+    </div>
+<% end %>
 <% end %>
 
 
-<div></div>
+
