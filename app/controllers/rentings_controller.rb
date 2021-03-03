@@ -1,4 +1,8 @@
 class RentingsController < ApplicationController
+  def index
+    @rentings = Renting.all
+  end
+
   def create
     @renting = Renting.new(renting_params)
     @vinyl = Vinyl.find(params[:vinyl_id])

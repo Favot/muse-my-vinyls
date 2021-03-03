@@ -1,0 +1,51 @@
+<!-- Profile -->
+
+<div class="card-profile">
+<%= cl_image_tag current_user.photo.key, width: 130, height: 130, crop: :fill %>
+</div>
+<h4 class="text-center">
+<%= current_user.first_name.capitalize %>
+<%= current_user.last_name.capitalize %>
+</h4>
+
+
+<!-- Tabs -->
+
+<ul class="list-inline tabs-underlined">
+  <li>
+    <a href="#" class="tab-underlined active">Bookings</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Requests</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Conversations</a>
+  </li>
+</ul>
+
+
+<!--  -->
+
+<% @rentings.each do |renting| %>
+  <%= link_to rentings_path do %>
+    <div class="card-product">
+      <!-- vinyl.photo -->
+      <%= image_tag "https://via.placeholder.com/110" %>
+      <!-- delete if when seeds.rb work -->
+      <div class="card-product-infos">
+        <h2>title</h2>
+        <p><%= renting.start_date %></p>
+        <p><%= renting.end_date %></p>
+        <p><%= renting.total_price %> €</p>
+        <p><%= renting.renter_id %></p>
+        <p><%= renting.vinyl_id %></p>
+      </div>
+      <div class="card-product-price">
+        <p><em><%= renting.status %></em></p>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+
+<div></div>
