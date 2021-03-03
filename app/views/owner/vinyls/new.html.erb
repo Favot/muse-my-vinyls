@@ -1,0 +1,36 @@
+<div class="form-auth">
+    <h2>Sign up</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: new_owner_vinyl_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Title" }%>
+    <%= f.input :artist,
+                required: true,
+                input_html: { autocomplete: "Artist" } %>
+    <%= f.input :price_per_day,
+                required: true,
+                input_html: { autocomplete: "Price per day" } %>
+    <%= f.input :description,
+                required: true,
+                input_html: { autocomplete: "Description" } %>
+    <%= f.input :condition,
+                required: true,
+                input_html: { autocomplete: "Condition" } %>
+
+    <%= f.input :photo,
+                as: :file,
+                required: true,
+                input_html: { autocomplete: "Album Photo" } %>
+  </div>
+
+  <div class="form-actions btn btn-success auth-btn">
+    <%= f.button :submit, "Add Album" %>
+  </div>
+<% end %>
+
+</div>
