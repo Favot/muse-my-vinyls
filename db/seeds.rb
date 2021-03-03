@@ -246,7 +246,7 @@ renting_1 = Renting.create!(
   vinyl: christophe_vinyl_1,
   start_date: Date.today,
   end_date: Date.today + 7,
-  status: "pending",
+  status: "Pending",
   total_price: total_price
 )
 
@@ -257,7 +257,7 @@ renting_2 = Renting.create!(
   vinyl: christophe_vinyl_2,
   start_date: Date.today,
   end_date: Date.today + 6,
-  status: "pending",
+  status: "Pending",
   total_price: total_price
 )
 
@@ -268,7 +268,7 @@ renting_3 = Renting.create!(
   vinyl: christophe_vinyl_5,
   start_date: Date.today,
   end_date: Date.today + 10,
-  status: "pending",
+  status: "Pending",
   total_price: total_price
 )
 
@@ -279,7 +279,7 @@ renting_4 = Renting.create!(
   vinyl: bastien_vinyl_1,
   start_date: Date.today,
   end_date: Date.today + 5,
-  status: "accepted",
+  status: "Accepted",
   total_price: total_price
 )
 
@@ -290,7 +290,7 @@ renting_5 = Renting.create!(
   vinyl: corentin_vinyl_1,
   start_date: Date.today,
   end_date: Date.today + 1,
-  status: "declined",
+  status: "Declined",
   total_price: total_price
 )
 

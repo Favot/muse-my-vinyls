@@ -1,5 +1,5 @@
 class Renting < ApplicationRecord
-  STATUS = %w[pending accepted declined]
+  STATUS = %w[Pending Accepted Declined]
 
   belongs_to :renter, class_name: 'User'
   belongs_to :vinyl
