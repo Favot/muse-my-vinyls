@@ -3,7 +3,7 @@
 <%# this is for the full list when click on suprise me  %>
 <div class="home-container">
   <% if @vinyls.nil? == false %>
-    <h2>Our Vinyls </h2>  
+    <h1>Our Vinyls</h1>  
     <%  @vinyls.each do |vinyl| %>
       <%= link_to vinyl_path(vinyl) do %>
         <div class="card-product">
@@ -30,7 +30,7 @@
     <%# this is for the resech list when click on search %>
     <% if @title.length > 0 %>
         <%# render artits if any  %>
-      <h2> Resulst By Title </h2> 
+      <h1>Results by Titles</h1> 
         <% @title.each do |vinyl| %>
           <%= link_to vinyl_path(vinyl) do %>
             <div class="card-product">
@@ -54,7 +54,7 @@
     <% end %>
     <%# render title if any if any  %>
     <% if @vinyls_searched.length > 0 %>
-      <h2> Resulst By Artits  </h2> 
+      <h1>Results by Artits</h1> 
         <%  @vinyls_searched.each do |vinyl| %>
           <%= link_to vinyl_path(vinyl) do %>
             <div class="card-product">

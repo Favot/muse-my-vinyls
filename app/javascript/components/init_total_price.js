@@ -20,10 +20,12 @@ const initTotalPrice = () => {
 
   if (startDateInput && endDateInput) {
     startDateInput.addEventListener("change", () => {
+
       computeTotalPrice(startDateInput, endDateInput);
     })
     endDateInput.addEventListener("change", () => {
       computeTotalPrice(startDateInput, endDateInput);
+
     })
   }
 }
