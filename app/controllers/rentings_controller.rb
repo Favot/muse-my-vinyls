@@ -11,9 +11,10 @@ class RentingsController < ApplicationController
   def create
     @renting = Renting.new(renting_params)
     @vinyl = Vinyl.find(params[:vinyl_id])
+    total_price = @vinyl.price_per_day * (@renting.end_date - @renting.start_date)
     @renting.vinyl = @vinyl
     @renting.renter = current_user
-
+    @renting.total_price = total_price
     if @renting.save
       flash[:alert] = 'Request submitted!'
       redirect_to rentings_path
