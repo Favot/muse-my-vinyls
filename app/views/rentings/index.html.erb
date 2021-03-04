@@ -71,20 +71,22 @@ ddd
       Declined
     </button>
   </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="declined-tab" data-bs-toggle="tab" data-bs-target="#declined" type="button" role="tab" aria-controls="declined" aria-selected="false">
-      Profile
-    </button>
-  </li>
 </ul>
 
 <!-- Tabs content -->
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
 
+
+
+
+
+
     <!-- Display Pending -->
     <% @rentings.order('created_at DESC').each do |renting| %>
       <% if renting.status == "Pending" %>
+
+<div class="card-trip">
 
         <div class="card-product">
           <!-- vinyl.photo -->
@@ -97,12 +99,42 @@ ddd
           <div class="card-product-infos">
             <h2><%= renting.vinyl.title %></h2>
             <p>From <%= renting.start_date.month %>/<%= renting.start_date.day %> to <%= renting.end_date.month %>/<%= renting.end_date.day %></p>
-            <!-- <p>Rented from: <%= renting.vinyl.owner.first_name %></p> -->
+            <p>Owner: <%= renting.vinyl.owner.first_name %></p>
           </div>
           <div class="card-product-price">
             <p><%= renting.total_price %>€</p>
           </div>
         </div>
+
+
+  <div class="card-trip-infos">
+    <div>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+
+        <div class="card-product">
+          <!-- vinyl.photo -->
+          <% if renting.vinyl.photo.attached? %>
+            <%= cl_image_tag renting.vinyl.photo.key, width: 110, height: 110, crop: :fill %>
+          <% else %>
+            <%= image_tag "https://via.placeholder.com/110" %>
+          <% end %>
+          <!-- Text -->
+          <div class="card-product-infos">
+            <h2><%= renting.vinyl.title %></h2>
+            <p>From <%= renting.start_date.month %>/<%= renting.start_date.day %> to <%= renting.end_date.month %>/<%= renting.end_date.day %></p>
+            <p>Owner: <%= renting.vinyl.owner.first_name %></p>
+          </div>
+          <div class="card-product-price">
+            <p><%= renting.total_price %>€</p>
+          </div>
+        </div>
+
       <% end %>
     <% end %>
   </div>
