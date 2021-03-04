@@ -1,4 +1,4 @@
-<!-- Partial for 'owner/rentings#index' -->
+<!-- Partial for 'owner/rentings#update' -->
 
 <% data.each do |renting| %>
     <div class="card-renting">
@@ -26,11 +26,15 @@
         <h2 class="card-renting-pricing"><%= renting.total_price %>€</h2>
       </div>
 
-    <%= link_to 'Accept', validate_owner_renting_path(renting), method: :patch, class: "btn btn-primary" %>
-    <%= link_to 'Decline', decline_owner_renting_path(renting), method: :patch, class: "btn btn-danger" %>
+      <!-- Btns -->
+      <div id="validation-btn">
+        <%= link_to 'Accept', validate_owner_renting_path(renting), method: :patch, class: "btn", id: "accept-btn" %>
+        <%= link_to 'Decline', decline_owner_renting_path(renting), method: :patch, class: "btn", id: "decline-btn" %>
+      </div>
 
     </div>
 <% end %>
+
 
 
 
