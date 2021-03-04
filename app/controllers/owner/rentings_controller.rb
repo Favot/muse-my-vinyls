@@ -13,14 +13,14 @@ class Owner::RentingsController < ApplicationController
     @renting.status = "Accepted"
     @renting.save!
 
-    redirect_to rentings_path
+    redirect_to owner_rentings_path
   end
 
   def decline
     @renting.status = "Declined"
     @renting.save!
 
-    redirect_to rentings_path
+    redirect_to owner_rentings_path
   end
 
   private
