@@ -5,8 +5,6 @@
     <!-- vinyl.photo -->
       <% if @vinyl.photo.attached? %>
         <%= cl_image_tag @vinyl.photo.key, crop: :fill,class: "img-vinyl" %>
-      <% else %>
-        <%= image_tag "https://via.placeholder.com/110", %>
       <% end %>
     <div class="card-body">
 
