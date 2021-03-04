@@ -2,7 +2,10 @@ class RentingsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @rentings = Renting.where(renter_id: current_user.id)
+    @rentings = Renting.where(renter_id: current_user.id).order('created_at DESC')
+    @pending_rentings = @rentings.where(status: 'Pending')
+    @accepted_rentings = @rentings.where(status: 'Accepted')
+    @declined_rentings = @rentings.where(status: 'Declined')
   end
 
   def create
@@ -15,7 +18,7 @@ class RentingsController < ApplicationController
       flash[:alert] = 'Request submitted!'
       redirect_to rentings_path
     else
-      flash[:alert] = 'Something went wrong. Try again.'
+      flash[:alert] = 'Request couldn\'t be submitted. Please try again.'
       redirect_to vinyl_path(@vinyl)
     end
   end
