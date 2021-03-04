@@ -29,10 +29,12 @@
                 required: true,
                 input_html: { autocomplete: "Profile Picture" } %>
   </div>
-
-  <div class="form-actions btn btn-success auth-btn">
-    <%= f.button :submit, "Sign up" %>
+<div class="outside-btn">
+<div class="form-actions btn btn-success auth-btn">
+    <%= f.button :submit, "Create my account" %>
   </div>
+</div>
+  
 <% end %>
 <div class="auth-link">
 <%= render "devise/shared/links" %>

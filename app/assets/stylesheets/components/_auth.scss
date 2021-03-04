@@ -6,9 +6,22 @@
   padding: 2rem;
 }
 
+.form-auth h2 {
+  text-align: center;
+}
+
+.outside-btn {
+  margin-top: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .auth-btn {
-  border-radius: 15px;
+  border-radius: 2px;
   margin-bottom: 8px;
+  align-items: center;
+  transition: 500ms;
 }
 
 .auth-link {
