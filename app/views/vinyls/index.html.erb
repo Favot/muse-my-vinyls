@@ -2,8 +2,8 @@
 
 <%# this is for the full list when click on suprise me  %>
 <div class="home-container">
-  <% if @vinyls.nil? == false %>
-    <h1>Our Vinyls</h1>  
+  <% if @vinyls %>
+    <h1>Our Vinyls</h1>
     <%  @vinyls.each do |vinyl| %>
       <%= link_to vinyl_path(vinyl) do %>
         <div class="card-product">
@@ -18,19 +18,19 @@
             <h2><%= vinyl.title %></h2>
             <p><%= vinyl.artist %></p>
           </div>
-            <div class="card-product-price">    
+            <div class="card-product-price">
               <p><%= vinyl.price_per_day %>€</p>
             </div>
           </div>
-        
+
       <% end %>
     <% end %>
   <% else %>
 
-    <%# this is for the resech list when click on search %>
+    <%# this is for the research list when click on search %>
     <% if @title.length > 0 %>
         <%# render artits if any  %>
-      <h1>Results by Titles</h1> 
+      <h1>Results by Titles</h1>
         <% @title.each do |vinyl| %>
           <%= link_to vinyl_path(vinyl) do %>
             <div class="card-product">
@@ -43,7 +43,7 @@
             <!-- delete if when seeds.rb work -->
             <div class="card-product-infos">
               <h2><%= vinyl.title %></h2>
-              <p><%= vinyl.artist %></p>    
+              <p><%= vinyl.artist %></p>
             </div>
               <div class="card-product-price">
                 <p><%= vinyl.price_per_day %>€</p>
@@ -52,9 +52,9 @@
           <% end %>
         <% end %>
     <% end %>
-    <%# render title if any if any  %>
+    <%# render title if any %>
     <% if @vinyls_searched.length > 0 %>
-      <h1>Results by Artits</h1> 
+      <h1>Results by Artists</h1>
         <%  @vinyls_searched.each do |vinyl| %>
           <%= link_to vinyl_path(vinyl) do %>
             <div class="card-product">

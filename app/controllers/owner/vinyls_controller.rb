@@ -2,6 +2,10 @@ module Owner
   class VinylsController < OwnerController
     before_action :authenticate_user!
 
+    def index
+      @vinyls = Vinyl.where(owner: current_user)
+    end
+
     def new
       @vinyl = Vinyl.new
     end
