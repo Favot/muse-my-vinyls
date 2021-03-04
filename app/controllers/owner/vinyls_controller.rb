@@ -14,7 +14,7 @@ module Owner
       if @vinyl.save!
         flash[:alert] = 'Your Vinyl as been had!'
         # when possible redirect to 'All requests'
-        redirect_to root_path
+        redirect_to owner_vinyls_path
       else
         flash[:alert] = 'Something went wrong. Try again.'
         redirect_to new_owner_vinyl_path(@vinyl)

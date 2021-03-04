@@ -93,46 +93,21 @@
         </li>
       </div>
       <li class="nav-item">
+      <div  class="nav-link">
         <% if user_signed_in? %>
-          <%= link_to rentings_path do %>
-
-            <div class="nav-link">
-              <svg 
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fad"
-                data-icon="login"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg" 
-                xmlns:xlink="http://www.w3.org/1999/xlink" 
-                xml:space="preserve"
-                version="1.1" 
-                x="0px" y="0px" 
-                viewBox="0 0 100 125" 
-                style="enable-background:new 0 0 100 100;" 
-                class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
-                  >
-                <g class="fa-group">
-                  <g class="fa-group">
-                    <circle 
-                    class="fa-primary"
-                    fill="currentColor" 
-                    cx="50" 
-                    cy="34.6" 
-                    r="15.5" />
-                  </g>
-                  <g>
-                    <path 
-                    class="fa-primary"
-                    fill="currentColor"
-                    d="M25.3,72c-1.8,4.4,1.4,9.3,6.2,9.3h37.8c4.8,0,8-4.9,6.2-9.3c-4.7-11.2-14.2-18.8-25.1-18.8S29.9,60.8,25.3,72z" />
-                  </g>
-                </g>
-              </svg>
-                <span class="link-text">Logged</span>
-            </div> 
-          <% end %>
+          
             
+              <div class="avatar">
+                  <div class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <%= cl_image_tag current_user.photo.key, width: 50, height: 50, crop: :fill %>
+                  </div>
+                  <div class="dropdown-menu">
+                      
+                    <%= link_to "My Requests",  rentings_path , class: "dropdown-item" %>
+                    <%= link_to "My Vinyls", owner_vinyls_path, class: "dropdown-item" %>
+                    <%= link_to "Logout", destroy_user_session_path , class: "dropdown-item", method: :delete %>
+                  </div>
+            </div>
         <% else %>
           <%= link_to new_user_session_path do %>
             <div class="nav-link">
@@ -168,10 +143,12 @@
                   </g>
                 </g>
               </svg>
+           
                 <span class="link-text">Login</span>
-            </div> 
+
           <% end %>
         <% end %>
+        </div>
       </li>
     </ul>
   </nav>
