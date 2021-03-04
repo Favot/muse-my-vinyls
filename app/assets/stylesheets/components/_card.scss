@@ -1,50 +1,51 @@
-.card{
-  margin-top:1.5rem;
+.card {
+  margin-top: 1.5rem;
   width: 100%;
 }
-.img-vinyl{
+
+.img-vinyl {
   width: 100%;
   margin-top: 5px;
 }
-.card-title{
+.card-title {
   line-height: 1;
 }
-
 
 .mx-1 {
   margin: 0 !important;
 }
-.card-text{
+
+.card-text {
   margin-top: 1.5rem;
   margin-bottom: 1.2rem;
 }
 
 .card-text:first-child {
-    margin: 0;
-    color: $warning;
-    font-size: 1.4em;
-    margin-right: 1.2rem;
-    text-align: center;
+  margin: 0;
+  color: $warning;
+  font-size: 1.4em;
+  margin-right: 1.2rem;
+  text-align: center;
 }
 
 .card-text:last-child {
-    margin-top: 1.2rem;
-    margin-right: 1.2rem;
-    color: white;
-    border: solid white 1px;
-    padding: 3px;
-    text-align: center;
+  margin-top: 1.2rem;
+  margin-right: 1.2rem;
+  color: white;
+  border: solid white 1px;
+  padding: 3px;
+  text-align: center;
 }
 
-#card-vinyls .btn{
+#card-vinyls .btn {
   width: 100%;
 }
 
-.btn-outline-dark{
+.btn-outline-dark {
   border: solid white 1px;
-  color:white;
+  color: white;
 }
 
-.btn-outline-dark:hover{
+.btn-outline-dark:hover {
   background-color: grey;
 }
