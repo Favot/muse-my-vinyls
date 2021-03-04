@@ -4,7 +4,7 @@ const initTotalPrice = () => {
 
   if (startDateInput && endDateInput) {
     startDateInput.addEventListener("change", () => {
-      console.log("coucou")
+      startDateInput.value()
     })
   }
 }
