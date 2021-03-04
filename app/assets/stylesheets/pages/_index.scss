@@ -1,2 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.home-container h2 {
+  text-align: center;
+  margin: 16px;
+}
