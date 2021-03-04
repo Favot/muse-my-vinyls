@@ -25,10 +25,9 @@
         <%= simple_form_for [ @vinyl, @renting ] do |f| %>
           <%= f.input :start_date, as: :date, html5: true %>
           <%= f.input :end_date, as: :date, html5: true %>
-          <%= f.submit "Request", class: "btn btn-success" %>
+          <%= f.submit "Request", class: "btn btn-success", id: "total-price", data: { 'price-per-day': @vinyl.price_per_day } %>
         <% end %>
-        <!-- <p data-price-per-day="<%= @vinyl.price_per_day %>" id="total-price">price is : </p> -->
-        <%= link_to 'Cancel', vinyls_path, class: "btn btn-outline-dark mt-2" %>
+        <!-- <p data-price-per-day="<%= @vinyl.price_per_day %>" id="total-price">Total price:</p> -->        <%= link_to 'Cancel', vinyls_path, class: "btn btn-outline-dark mt-2" %>
       </div>
   </div>
 </div>
