@@ -5,13 +5,18 @@ class VinylsController < ApplicationController
   end
 
   def index
-    @vinyls = Vinyl.all
-    @search = params["search"]
-    if @search.present?
-      @name = @search["name"]
-      @vinyls = Vinyl.where('artist ILIKE ?', "%#{@name}%")
+    if params[:search].present?
+      # @name =
+      @vinyls_searched = Vinyl.where('artist ILIKE ?', "%#{
 
-      @title = Vinyl.where('title ILIKE ?', "%#{@name}%")
+        params[:search]['query']}%")
+
+      @title = Vinyl.where('title ILIKE ?', "%#{
+
+        params[:search]['query']}%")
+
+    else
+      @vinyls = Vinyl.all
     end
   end
 end

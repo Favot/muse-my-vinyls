@@ -1,33 +1,33 @@
-.card{
-  margin-top:1.5rem;
+.card {
+  margin-top: 1.5rem;
 }
 
-.card-title{
+.card-title {
   line-height: 1;
 }
 
-.card-text{
+.card-text {
   margin-top: 1.5rem;
   margin-bottom: 1.2rem;
 }
 
 .card-text:first-child {
-    margin: 0;
-    color: $warning;
-    font-size: 1.4em;
-    margin-right: 1.2rem;
-    text-align: center;
+  margin: 0;
+  color: $warning;
+  font-size: 1.4em;
+  margin-right: 1.2rem;
+  text-align: center;
 }
 
 .card-text:last-child {
-    margin-top: 1.2rem;
-    margin-right: 1.2rem;
-    color: white;
-    border: solid white 1px;
-    padding: 3px;
-    text-align: center;
+  margin-top: 1.2rem;
+  margin-right: 1.2rem;
+  color: white;
+  border: solid white 1px;
+  padding: 3px;
+  text-align: center;
 }
 
-.btn{
-  width: 100%;
-}
+// .btn{
+//   width: 100%;
+// }

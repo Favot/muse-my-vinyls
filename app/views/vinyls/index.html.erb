@@ -1,54 +1,81 @@
 <!-- render '_search' -->
-<% if @vinyls.length > 0 %>
-<%  @vinyls.each do |vinyl| %>
-  <%= link_to vinyl_path(vinyl) do %>
-    <div class="card-product">
-      <!-- vinyl.photo -->
-      <% if vinyl.photo.attached? %>
-        <%= cl_image_tag vinyl.photo.key, width: 110, height: 110, crop: :fill %>
-      <% else %>
-        <%= image_tag "https://via.placeholder.com/110" %>
+
+<%# this is for the full list when click on suprise me  %>
+<div class="home-container">
+  <% if @vinyls.nil? == false %>
+    <h2>Our Vinyls </h2>  
+    <%  @vinyls.each do |vinyl| %>
+      <%= link_to vinyl_path(vinyl) do %>
+        <div class="card-product">
+            <!-- vinyl.photo -->
+          <% if vinyl.photo.attached? %>
+            <%= cl_image_tag vinyl.photo.key, width: 110, height: 110, crop: :fill %>
+          <% else %>
+            <%= image_tag "https://via.placeholder.com/110" %>
+          <% end %>
+              <!-- delete if when seeds.rb work -->
+          <div class="card-product-infos">
+            <h2><%= vinyl.title %></h2>
+            <p><%= vinyl.artist %></p>
+          </div>
+            <div class="card-product-price">    
+              <p><%= vinyl.price_per_day %>€</p>
+            </div>
+          </div>
+        
       <% end %>
-      <!-- delete if when seeds.rb work -->
-      <div class="card-product-infos">
-        <h2><%= vinyl.title %></h2>
-        <p><%= vinyl.artist %></p>
-      </div>
-      <div class="card-product-price">
-        <p><%= vinyl.price_per_day %>€</p>
-      </div>
-    </div>
-  <% end %>
-<% end %>
+    <% end %>
+  <% else %>
 
-<% end %>
-
-<% if @title.length > 0 %>
-  <% @title.each do |vinyl| %>
-    <%= link_to vinyl_path(vinyl) do %>
-      <div class="card-product">
-        <!-- vinyl.photo -->
-        <% if vinyl.photo.attached? %>
-          <%= cl_image_tag vinyl.photo.key, width: 110, height: 110, crop: :fill %>
-        <% else %>
-          <%= image_tag "https://via.placeholder.com/110" %>
+    <%# this is for the resech list when click on search %>
+    <% if @title.length > 0 %>
+        <%# render artits if any  %>
+      <h2> Resulst By Title </h2> 
+        <% @title.each do |vinyl| %>
+          <%= link_to vinyl_path(vinyl) do %>
+            <div class="card-product">
+            <!-- vinyl.photo -->
+            <% if vinyl.photo.attached? %>
+              <%= cl_image_tag vinyl.photo.key, width: 110, height: 110, crop: :fill %>
+            <% else %>
+              <%= image_tag "https://via.placeholder.com/110" %>
+            <% end %>
+            <!-- delete if when seeds.rb work -->
+            <div class="card-product-infos">
+              <h2><%= vinyl.title %></h2>
+              <p><%= vinyl.artist %></p>    
+            </div>
+              <div class="card-product-price">
+                <p><%= vinyl.price_per_day %>€</p>
+              </div>
+            </div>
+          <% end %>
         <% end %>
-        <!-- delete if when seeds.rb work -->
-        <div class="card-product-infos">
-          <h2><%= vinyl.title %></h2>
-          <p><%= vinyl.artist %></p>
-        </div>
-        <div class="card-product-price">
-          <p><%= vinyl.price_per_day %>€</p>
-        </div>
-      </div>
+    <% end %>
+    <%# render title if any if any  %>
+    <% if @vinyls_searched.length > 0 %>
+      <h2> Resulst By Artits  </h2> 
+        <%  @vinyls_searched.each do |vinyl| %>
+          <%= link_to vinyl_path(vinyl) do %>
+            <div class="card-product">
+            <!-- vinyl.photo -->
+            <% if vinyl.photo.attached? %>
+              <%= cl_image_tag vinyl.photo.key, width: 110, height: 110, crop: :fill %>
+            <% else %>
+              <%= image_tag "https://via.placeholder.com/110" %>
+            <% end %>
+            <!-- delete if when seeds.rb work -->
+            <div class="card-product-infos">
+              <h2><%= vinyl.title %></h2>
+              <p><%= vinyl.artist %></p>
+            </div>
+            <div class="card-product-price">
+              <p><%= vinyl.price_per_day %>€</p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     <% end %>
   <% end %>
 
-<% end %>
-
-<% if @title.length == 0 and  @vinyls.length == 0 %>
-
-  Sorry we didn't find your Request
-
-<% end %>
+</div>
