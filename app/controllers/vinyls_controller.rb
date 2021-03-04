@@ -1,5 +1,4 @@
 class VinylsController < ApplicationController
-
   def show
     @vinyl = Vinyl.find(params[:id])
     @renting = Renting.new
@@ -7,6 +6,12 @@ class VinylsController < ApplicationController
 
   def index
     @vinyls = Vinyl.all
-  end
+    @search = params["search"]
+    if @search.present?
+      @name = @search["name"]
+      @vinyls = Vinyl.where('artist ILIKE ?', "%#{@name}%")
 
+      @title = Vinyl.where('title ILIKE ?', "%#{@name}%")
+    end
+  end
 end
