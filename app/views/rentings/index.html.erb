@@ -34,11 +34,12 @@
       <!-- delete if when seeds.rb work -->
       <div class="card-product-infos">
         <h2>title</h2>
-        <p><%= renting.start_date %></p>
+        <p><%= renting.start_date %></p><%= link_to "Validate", validate_owner_renting_path(renting), method: :patch%>
         <p><%= renting.end_date %></p>
         <p><%= renting.total_price %> €</p>
         <p><%= renting.renter_id %></p>
         <p><%= renting.vinyl_id %></p>
+
       </div>
       <div class="card-product-price">
         <p><em><%= renting.status %></em></p>
