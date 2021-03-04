@@ -33,3 +33,9 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initTotalPrice()
 });
+
+// JS Tabs for 'rentings#index'
+import { displayTab } from '../components/tabs';
+document.addEventListener('click', () => {
+  displayTab()
+});
