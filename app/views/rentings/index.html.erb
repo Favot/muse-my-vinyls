@@ -1,94 +1,195 @@
 <!-- Profile -->
-
-<div class="card-profile">
-  <%= cl_image_tag current_user.photo.key, width: 130, height: 130, crop: :fill %>
-</div>
-
+<%= cl_image_tag current_user.photo.key, width: 140, height: 140, crop: :fill, class: "big-avatar-square" %>
 <h4 class="text-center">
   <%= current_user.first_name.capitalize %>
   <%= current_user.last_name.capitalize %>
 </h4>
 
-<!-- TO DO: Tabs -->
+<!-- <script>
+  $(function () {
+    $('#myTab li:last-child a').tab('show')
+  })
+</script> -->
 
-<!-- Display Pending -->
-<h5>Pending Requests</h5>
+<!-- Main Tabs (w/o JS file) -->
 
-<% @rentings.each do |renting| %>
-  <% if renting.status == "Pending" %>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item-big">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+      Submitted
+    </a>
+  </li>
+  <li class="nav-item-big">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+      Incoming
+    </a>
+  </li>
+</ul>
 
-    <div class="card-product">
-      <!-- vinyl.photo -->
-      <% if renting.vinyl.photo.attached? %>
-        <%= cl_image_tag renting.vinyl.photo.key, width: 110, height: 110, crop: :fill %>
-      <% else %>
-        <%= image_tag "https://via.placeholder.com/110" %>
-      <% end %>
-      <!-- Text -->
-      <div class="card-product-infos">
-        <h2><%= renting.vinyl.title %></h2>
-        <p><%= renting.start_date %> - <%= renting.end_date %></p>
-        <p>Owner: <%= renting.vinyl.owner.first_name %></p>
+<div class="tab-content">
+  <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+  <!-- SUBMITTED -->
+
+    <!-- Tabs w/ tabs.js -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" type="button" role="tab" aria-controls="pending" aria-selected="true">
+          Pending
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="accepted-tab" data-bs-toggle="tab" data-bs-target="#accepted" type="button" role="tab" aria-controls="accepted" aria-selected="false">
+          Accepted
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="declined-tab" data-bs-toggle="tab" data-bs-target="#declined" type="button" role="tab" aria-controls="declined" aria-selected="false">
+          Declined
+        </button>
+      </li>
+    </ul>
+
+    <!-- Tabs content -->
+    <div class="tab-content" id="myTabContent">
+
+      <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
+        <!-- Display Pending -->
+        <% @rentings.order('created_at DESC').each do |renting| %>
+          <% if renting.status == "Pending" %>
+            <div class="card-renting">
+              <!-- Vinyl info -->
+              <div class="card-product">
+                <!-- vinyl.photo -->
+                <% if renting.vinyl.photo.attached? %>
+                  <%= cl_image_tag renting.vinyl.photo.key, width: 120, height: 120, crop: :fill %>
+                <% else %>
+                  <%= image_tag "https://via.placeholder.com/120" %>
+                <% end %>
+                <!-- vinyl info -->
+                <div class="card-product-infos">
+                  <h2><%= renting.vinyl.title %></h2>
+                  <p><%= renting.vinyl.artist %></p>
+                </div>
+              </div>
+              <!-- Renting info -->
+              <div class="card-renting-infos">
+                <div>
+                  <p>Owned by <%= renting.vinyl.owner.first_name %></p>
+                  <h2>From <%= renting.start_date.month %>/<%= renting.start_date.day %> to <%= renting.end_date.month %>/<%= renting.end_date.day %></h2>
+                </div>
+                <h2 class="card-renting-pricing"><%= renting.total_price %>€</h2>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       </div>
-      <div class="card-product-price">
-        <p><%= renting.total_price %> €</p>
+
+      <div class="tab-pane fade" id="accepted" role="tabpanel" aria-labelledby="accepted-tab">
+        <!-- Display Accepted -->
+        <% @rentings.order('created_at DESC').each do |renting| %>
+          <% if renting.status == "Accepted" %>
+            <div class="card-renting">
+              <!-- Vinyl info -->
+              <div class="card-product">
+                <!-- vinyl.photo -->
+                <% if renting.vinyl.photo.attached? %>
+                  <%= cl_image_tag renting.vinyl.photo.key, width: 120, height: 120, crop: :fill %>
+                <% else %>
+                  <%= image_tag "https://via.placeholder.com/120" %>
+                <% end %>
+                <!-- vinyl info -->
+                <div class="card-product-infos">
+                  <h2><%= renting.vinyl.title %></h2>
+                  <p><%= renting.vinyl.artist %></p>
+                </div>
+              </div>
+              <!-- Renting info -->
+              <div class="card-renting-infos">
+                <div>
+                  <p>Owned by <%= renting.vinyl.owner.first_name %></p>
+                  <h2>From <%= renting.start_date.month %>/<%= renting.start_date.day %> to <%= renting.end_date.month %>/<%= renting.end_date.day %></h2>
+                </div>
+                <h2 class="card-renting-pricing"><%= renting.total_price %>€</h2>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       </div>
 
+      <div class="tab-pane fade" id="declined" role="tabpanel" aria-labelledby="declined-tab">
+        <!-- Display Declined -->
+        <% @rentings.order('created_at DESC').each do |renting| %>
+          <% if renting.status == "Declined" %>
+            <div class="card-renting">
+              <!-- Vinyl info -->
+              <div class="card-product">
+                <!-- vinyl.photo -->
+                <% if renting.vinyl.photo.attached? %>
+                  <%= cl_image_tag renting.vinyl.photo.key, width: 120, height: 120, crop: :fill %>
+                <% else %>
+                  <%= image_tag "https://via.placeholder.com/120" %>
+                <% end %>
+                <!-- vinyl info -->
+                <div class="card-product-infos">
+                  <h2><%= renting.vinyl.title %></h2>
+                  <p><%= renting.vinyl.artist %></p>
+                </div>
+              </div>
+              <!-- Renting info -->
+              <div class="card-renting-infos">
+                <div>
+                  <p>Owned by <%= renting.vinyl.owner.first_name %></p>
+                  <h2>From <%= renting.start_date.month %>/<%= renting.start_date.day %> to <%= renting.end_date.month %>/<%= renting.end_date.day %></h2>
+                </div>
+                <h2 class="card-renting-pricing"><%= renting.total_price %>€</h2>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <!-- ... -->
     </div>
-<% end %>
-<% end %>
+  <!-- / SUBMITTED -->
+  </div>
 
-<!-- Display Accepted -->
-<h5>Accepted Requests</h5>
-<% @rentings.each do |renting| %>
-  <% if renting.status == "Accepted" %>
+  <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+  <!-- INCOMING -->
 
-    <div class="card-product">
-      <!-- vinyl.photo -->
-      <% if renting.vinyl.photo.attached? %>
-        <%= cl_image_tag renting.vinyl.photo.key, width: 110, height: 110, crop: :fill %>
-      <% else %>
-        <%= image_tag "https://via.placeholder.com/110" %>
-      <% end %>
-      <!-- Text -->
-      <div class="card-product-infos">
-        <h2><%= renting.vinyl.title %></h2>
-        <p><%= renting.start_date %> - <%= renting.end_date %></p>
-        <p>Owner: <%= renting.vinyl.owner.first_name %></p>
-      </div>
-      <div class="card-product-price">
-        <p><%= renting.total_price %> €</p>
-      </div>
+  <!-- Tabs w/ tabs.js (incoming) -->
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" type="button" role="tab" aria-controls="pending" aria-selected="true">
+        Pending
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="accepted-tab" data-bs-toggle="tab" data-bs-target="#accepted" type="button" role="tab" aria-controls="accepted" aria-selected="false">
+        Accepted
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="declined-tab" data-bs-toggle="tab" data-bs-target="#declined" type="button" role="tab" aria-controls="declined" aria-selected="false">
+        Declined
+      </button>
+    </li>
+  </ul>
 
+  <!-- Tabs content (incoming) -->
+  <div class="tab-content" id="myTabContent">
+
+    <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
+      <!-- Display Pending -->
     </div>
-<% end %>
-<% end %>
 
-<!-- Display Declined -->
-<h5>Declined Requests</h5>
-<% @rentings.each do |renting| %>
-  <% if renting.status == "Declined" %>
-
-    <div class="card-product">
-      <!-- vinyl.photo -->
-      <% if renting.vinyl.photo.attached? %>
-        <%= cl_image_tag renting.vinyl.photo.key, width: 110, height: 110, crop: :fill %>
-      <% else %>
-        <%= image_tag "https://via.placeholder.com/110" %>
-      <% end %>
-      <!-- Text -->
-      <div class="card-product-infos">
-        <h2><%= renting.vinyl.title %></h2>
-        <p><%= renting.start_date %> - <%= renting.end_date %></p>
-        <p>Owner: <%= renting.vinyl.owner.first_name %></p>
-      </div>
-      <div class="card-product-price">
-        <p><%= renting.total_price %> €</p>
-      </div>
-
+    <div class="tab-pane fade" id="accepted" role="tabpanel" aria-labelledby="accepted-tab">
+      <!-- Display Accepted -->
     </div>
-<% end %>
-<% end %>
 
-
-
+    <div class="tab-pane fade" id="declined" role="tabpanel" aria-labelledby="declined-tab">
+      <!-- Display Declined -->
+    </div>
+    <!-- ... -->
+  </div>
+  <!-- / INCOMING -->
+  </div>
+</div>

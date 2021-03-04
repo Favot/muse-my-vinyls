@@ -1,5 +1,6 @@
 
 <div class="container d-flex justify-content-center">
+
   <div class="card text-white bg-dark mt-2 col-12 col-lg-6 offset_2">
     <!-- vinyl.photo -->
       <% if @vinyl.photo.attached? %>
@@ -8,6 +9,7 @@
         <%= image_tag "https://via.placeholder.com/110", %>
       <% end %>
     <div class="card-body">
+
       <div class="row d-flex justify-content-between">
         <div class="col-6">
           <h5 class="card-title"><%= @vinyl.title %></h5>
@@ -26,8 +28,8 @@
           <%= f.submit "Request", class: "btn btn-success" %>
         <% end %>
         <!-- <p data-price-per-day="<%= @vinyl.price_per_day %>" id="total-price">price is : </p> -->
-        <%= link_to 'Cancel', vinyls_path, class: "btn btn-light mt-2" %>
-    </div>
+        <%= link_to 'Cancel', vinyls_path, class: "btn btn-outline-dark mt-2" %>
+      </div>
   </div>
 </div>
 </div>
