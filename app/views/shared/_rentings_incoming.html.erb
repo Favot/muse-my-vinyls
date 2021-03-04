@@ -1,6 +1,33 @@
-<%= link_to 'Accept', , validate_owner_renting %>
+<!-- Partial for 'owner/rentings#index' -->
 
+<% data.each do |renting| %>
+    <div class="card-renting">
+      <!-- Vinyl info -->
+      <div class="card-product">
+        <!-- vinyl.photo -->
+        <% if renting.vinyl.photo.attached? %>
+          <%= cl_image_tag renting.vinyl.photo.key, width: 120, height: 120, crop: :fill %>
+        <% else %>
+          <%= image_tag "https://via.placeholder.com/120" %>
+        <% end %>
+        <!-- vinyl info -->
+        <div class="card-product-infos">
+          <h1><%= renting.status %></h1>
+          <h2><%= renting.vinyl.title %></h2>
+          <p><%= renting.vinyl.artist %></p>
+        </div>
+      </div>
+      <!-- Renting info -->
+      <div class="card-renting-infos">
+        <div>
+          <p>Owned by <%= renting.vinyl.owner.first_name %></p>
+          <h2>From <%= renting.start_date.month %>/<%= renting.start_date.day %> to <%= renting.end_date.month %>/<%= renting.end_date.day %></h2>
+        </div>
+        <h2 class="card-renting-pricing"><%= renting.total_price %>€</h2>
+      </div>
 
-decline_owner_renting
+    <%= link_to 'Accept', validate_owner_renting_path(renting), method: :patch, class: "btn btn-primary" %>
+    <%= link_to 'Decline', decline_owner_renting_path(renting), method: :patch, class: "btn btn-danger" %>
 
-  owner_rentings
+    </div>
+<% end %>
