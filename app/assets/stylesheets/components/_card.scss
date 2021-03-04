@@ -1,12 +1,17 @@
-.card {
-  margin-top: 1.5rem;
+.card{
+  margin-top:1.5rem;
+  width: 100%;
 }
 
 .card-title {
   line-height: 1;
 }
 
-.card-text {
+.mx-1 {
+  margin: 0 !important;
+}
+
+.card-text{
   margin-top: 1.5rem;
   margin-bottom: 1.2rem;
 }
@@ -28,6 +33,15 @@
   text-align: center;
 }
 
-// .btn{
-//   width: 100%;
-// }
+#card-vinyls .btn{
+  width: 100%;
+}
+
+.btn-outline-dark{
+  border: solid white 1px;
+  color:white;
+}
+
+.btn-outline-dark:hover{
+  background-color: grey;
+}
