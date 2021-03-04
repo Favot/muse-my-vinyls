@@ -1,6 +1,8 @@
 class RentingsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @rentings = Renting.all
+    @rentings = Renting.where(renter_id: current_user.id)
   end
 
   def create
@@ -11,7 +13,6 @@ class RentingsController < ApplicationController
 
     if @renting.save
       flash[:alert] = 'Request submitted!'
-      # when possible redirect to 'All requests'
       redirect_to rentings_path
     else
       flash[:alert] = 'Something went wrong. Try again.'
