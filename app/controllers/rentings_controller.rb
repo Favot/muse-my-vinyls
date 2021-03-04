@@ -12,7 +12,7 @@ class RentingsController < ApplicationController
     if @renting.save
       flash[:alert] = 'Request submitted!'
       # when possible redirect to 'All requests'
-      redirect_to vinyls_path
+      redirect_to rentings_path
     else
       flash[:alert] = 'Something went wrong. Try again.'
       redirect_to vinyl_path(@vinyl)
