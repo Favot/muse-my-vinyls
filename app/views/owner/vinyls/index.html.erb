@@ -1,7 +1,12 @@
-  <%= cl_image_tag current_user.photo.key, width: 140, height: 140, crop: :fill, class: "big-avatar-square" %>
-  <h4 class="text-center">
-    <%= current_user.first_name.capitalize %>
-    <%= current_user.last_name.capitalize %>
-  </h4>
+  <div class="owner-view">
+   
+      <%= cl_image_tag current_user.photo.key, width: 140, height: 140, crop: :fill, class: "big-avatar-square" %>
+      <h4 class="text-center">
 
-  <%= render "shared/vinyls.html.erb", vinyls: @vinyls %>
+        <%= current_user.first_name.capitalize %>
+        <%= current_user.last_name.capitalize %>
+      </h4>
+        <div class="class vinyls-list">
+      <%= render "shared/vinyls.html.erb", vinyls: @vinyls %>
+    </div>
+  </div>
