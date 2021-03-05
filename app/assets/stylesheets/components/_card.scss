@@ -50,17 +50,40 @@
   background-color: grey;
 }
 
-.btn-show-outside {
-  display: flex;
-  justify-content: center;
-  text-align: left;
-  flex-direction: column;
-}
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .card {
+    display: flex;
+    flex-direction: row;
+  }
 
-.auth-btn {
-  border-radius: 2px;
-  margin-bottom: 8px;
-  align-items: center;
-  transition: 500ms;
-  width: 100%;
+  .card img {
+    vertical-align: middle;
+    border-style: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+  .text-white {
+    color: #fff !important;
+  }
+  .card {
+    display: flex;
+    border-radius: 8px;
+    padding: 8px;
+  }
+
+  .img-vinyl {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .show-desktop {
+    display: flex;
+    margin-left: 6rem;
+    padding: 16px;
+    height: 80vh;
+  }
 }

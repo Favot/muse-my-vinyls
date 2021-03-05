@@ -4,27 +4,30 @@
 <div class="home-container">
   <% if @vinyls %>
     <h1>Our Vinyls</h1>
-    <%  @vinyls.each do |vinyl| %>
-      <%= link_to vinyl_path(vinyl) do %>
-        <div class="card-product">
-            <!-- vinyl.photo -->
-          <% if vinyl.photo.attached? %>
-            <%= cl_image_tag vinyl.photo.key, width: 110, height: 110, crop: :fill %>
-          <% else %>
-            <%= image_tag "https://via.placeholder.com/110" %>
-          <% end %>
-              <!-- delete if when seeds.rb work -->
-          <div class="card-product-infos">
-            <h2><%= vinyl.title %></h2>
-            <p><%= vinyl.artist %></p>
-          </div>
-            <div class="card-product-price">
-              <p><%= vinyl.price_per_day %>€</p>
+    <div class="class vinyls-list">
+    
+      <%  @vinyls.each do |vinyl| %>
+        <%= link_to vinyl_path(vinyl) do %>
+          <div class="card-product">
+              <!-- vinyl.photo -->
+            <% if vinyl.photo.attached? %>
+              <%= cl_image_tag vinyl.photo.key, width: 110, height: 110, crop: :fill %>
+            <% else %>
+              <%= image_tag "https://via.placeholder.com/110" %>
+            <% end %>
+                <!-- delete if when seeds.rb work -->
+            <div class="card-product-infos">
+              <h2><%= vinyl.title %></h2>
+              <p><%= vinyl.artist %></p>
             </div>
-          </div>
+              <div class="card-product-price">
+                <p><%= vinyl.price_per_day %>€</p>
+              </div>
+            </div>
 
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   <% else %>
 
     <%# this is for the research list when click on search %>
