@@ -1,7 +1,7 @@
 <nav class="navbar">
     <ul class="navbar-nav">
       <li class="logo">
-        <a href="#" class="nav-link">
+        <a href="/" class="nav-link">
           <p class="link-text logo-text">Muse my Vinyls</p><br />
            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 8c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm0 6c-1.104 0-2-.897-2-2s.896-2 2-2 2 .897 2 2-.896 2-2 2zm0-12c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2.914 20.526c-2.625-.902-4.697-2.978-5.592-5.606l1.02-.127c.807 2.174 2.529 3.901 4.699 4.714l-.127 1.019zm.258-2.054c-1.723-.71-3.098-2.085-3.807-3.807l1.041-.13c.596 1.272 1.623 2.299 2.895 2.896l-.129 1.041zm8.095-9.007c-.598-1.272-1.625-2.3-2.896-2.896l.131-1.041c1.721.71 3.096 2.085 3.807 3.807l-1.042.13zm2.049-.256c-.814-2.157-2.529-3.869-4.691-4.677l.129-1.019c2.613.896 4.68 2.958 5.582 5.568l-1.02.128z"/></svg>
         </a>
@@ -10,25 +10,25 @@
         <div class="nav-link">
           <% if user_signed_in? %>
              <%= link_to new_owner_vinyl_path do %>
-                <svg 
+                <svg
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fad"
                 data-icon="add"
                 role="img"
-                xmlns="http://www.w3.org/2000/svg" 
-                xmlns:xlink="http://www.w3.org/1999/xlink" 
-                version="1.1" 
-                x="0px" 
-                y="0px" 
-                viewBox="0 0 100 125" 
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1"
+                x="0px"
+                y="0px"
+                viewBox="0 0 100 125"
                 class="navbar-svg svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
                 xml:space="preserve">
-                <g 
+                <g
                 class="fa-group"
                 id="add-vinyls">
-                  <path 
-                  
+                  <path
+
                     class="fa-primary "
                     fill="currentColor"
                     d="M50,7.5C26.528,7.5,7.5,26.528,7.5,50S26.528,92.5,50,92.5S92.5,73.472,92.5,50S73.472,7.5,50,7.5z M63.893,55H55v8.893   c0,2.761-2.239,5-5,5s-5-2.239-5-5V55h-8.893c-2.761,0-5-2.239-5-5c0-2.762,2.239-5,5-5H45v-8.893c0-2.761,2.239-5,5-5s5,2.239,5,5   V45h8.893c2.761,0,5,2.238,5,5C68.893,52.761,66.654,55,63.893,55z"/>
@@ -38,22 +38,22 @@
               <% end %>
           <% else %>
             <%= link_to new_user_session_path do %>
-              <svg 
+              <svg
               aria-hidden="true"
               focusable="false"
               data-prefix="fad"
               data-icon="add"
               role="img"
-              xmlns="http://www.w3.org/2000/svg" 
-              xmlns:xlink="http://www.w3.org/1999/xlink" 
-              version="1.1" 
-              x="0px" 
-              y="0px" 
-              viewBox="0 0 100 125" 
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              version="1.1"
+              x="0px"
+              y="0px"
+              viewBox="0 0 100 125"
               class="navbar-svg svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
               xml:space="preserve">
               <g class="fa-group navbar-svg">
-                <path 
+                <path
                   class="fa-primary "
                   fill="currentColor"
                   d="M50,7.5C26.528,7.5,7.5,26.528,7.5,50S26.528,92.5,50,92.5S92.5,73.472,92.5,50S73.472,7.5,50,7.5z M63.893,55H55v8.893   c0,2.761-2.239,5-5,5s-5-2.239-5-5V55h-8.893c-2.761,0-5-2.239-5-5c0-2.762,2.239-5,5-5H45v-8.893c0-2.761,2.239-5,5-5s5,2.239,5,5   V45h8.893c2.761,0,5,2.238,5,5C68.893,52.761,66.654,55,63.893,55z"/>
@@ -64,42 +64,144 @@
           <% end %>
         </div>
       </li>
-      
-      <li class="nav-item">
+      <% if user_signed_in? %>
+        <li class="nav-item desktop-display">
+          <div class="nav-link">
+              <%= link_to owner_vinyls_path do %>
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fad"
+                    data-icon="add"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 64 80"
+                    x="0px"
+                    y="0px"
+                    class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
+                    >
+                    <g class="fa-group">
+                      <path
+                        class="fa-primary"
+                        fill="currentColor"
+                        d="M48.565,36.572A8,8,0,0,0,42,24v2a6,6,0,0,1,2.571,11.423l.858,1.806A8.015,8.015,0,0,0,48.565,36.572Z"/>
+                      <rect
+                        class="fa-primary"
+                        fill="currentColor"
+                        x="42"
+                        y="46"
+                        width="2"
+                        height="2"/>
+                      <rect
+                        class="fa-primary"
+                        fill="currentColor"
+                        x="46"
+                        y="45"
+                        width="2"
+                        height="2"/>
+                      <path
+                        class="fa-primary"
+                        fill="currentColor"
+                        d="M42,12a18.658,18.658,0,0,0-2,.128V9H2V55H40V51.872A18.658,18.658,0,0,0,42,52a20,20,0,0,0,0-40ZM6,53H4V27H20a2,2,0,0,1,0,4H13a7.008,7.008,0,0,0-7,7Zm4-15V53H8V38a5.006,5.006,0,0,1,5-5h7a4,4,0,0,0,0-8H4V23H20a6,6,0,0,1,0,12H13A3,3,0,0,0,10,38ZM38,53H12V38a1,1,0,0,1,1-1h7a8,8,0,0,0,0-16H4V11H38Zm2-38.871A16.43,16.43,0,0,1,42,14a17.868,17.868,0,0,1,8.209,2H40ZM40,18H53.289a18.109,18.109,0,0,1,2.089,2H40Zm0,17.444A3.959,3.959,0,0,0,42,36a4,4,0,0,0,0-8,3.959,3.959,0,0,0-2,.556V22.209A9.812,9.812,0,0,1,42,22a10,10,0,0,1,0,20,9.812,9.812,0,0,1-2-.209ZM40,32a2,2,0,1,1,2,2A2,2,0,0,1,40,32Zm2,18a16.43,16.43,0,0,1-2-.129V43.82A11.784,11.784,0,0,0,42,44a12,12,0,0,0,10.376-6H58.95A18.016,18.016,0,0,1,42,50ZM60,32a17.949,17.949,0,0,1-.464,4H53.3a11.85,11.85,0,0,0-.924-10H58.95A17.9,17.9,0,0,1,60,32Zm-1.9-8H50.919a12.089,12.089,0,0,0-2.3-2h8.337A18.176,18.176,0,0,1,58.1,24Z"/>
+                      <rect
+                        class="fa-primary"
+                        fill="currentColor"
+                        x="6"
+                        y="13"
+                        width="2"
+                        height="2"/>
+                      <rect
+                        class="fa-primary"
+                        fill="currentColor"
+                        x="10"
+                        y="13"
+                        width="2"
+                        height="2"/>
+                      <path
+                        class="fa-primary"
+                        fill="currentColor"
+                        d="M18,51H36V43H18Zm2-6H34v4H20Z"/>
+                      <polygon
+                        class="fa-primary"
+                        fill="currentColor"
+                        points="34 20 36 20 36 13 32 13 32 15 34 15 34 20"/>
+                    </g>
+                  </svg>
+                  <span class="link-text">My Vinyls</span>
+                <% end %>
+
+          </div>
+        </li>
+      <% end %>
+      <% if user_signed_in? %>
+        <li class="nav-item desktop-display">
+          <div class="nav-link">
+              <%= link_to rentings_path do %>
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fad"
+                    data-icon="add"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="247 25 20 20"
+                    x="0px"
+                    y="0px"
+                    class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
+                    >
+                    <path
+                      class="fa-primary"
+                      fill="currentColor"
+                      d="M253 38h9.493c1.387 0 2.507-1.119 2.507-2.499v-1.501c0-.556-.448-1-1-1-.556 0-1 .448-1 1v1c0 .556-.446 1-.996 1h-9.004v-3l-4 4 4 4v-3zm8-10h-9.493c-1.387 0-2.507 1.119-2.507 2.499v1.501c0 .556.448 1 1 1 .556 0 1-.448 1-1v-1c0-.556.446-1 .996-1h9.004v3l4-4-4-4v3z"
+                      fill-rule="evenodd"/>
+                  </svg>
+                  <span class="link-text">My Requests</span>
+                <% end %>
+
+          </div>
+        </li>
+       <% end %>
+      <li class="nav-item desktop-no-display">
         <div  class="nav-link">
           <%= link_to root_path do %>
-            <svg 
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fad"
-            data-icon="add"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg" 
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24"
-            class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
-            
-            >
-              <g class="fa-group navbar-svg">
-                <path 
-                class="fa-primary "
-                fill="currentColor"
-                d="M12 8c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm0 6c-1.104 0-2-.897-2-2s.896-2 2-2 2 .897 2 2-.896 2-2 2zm0-12c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2.914 20.526c-2.625-.902-4.697-2.978-5.592-5.606l1.02-.127c.807 2.174 2.529 3.901 4.699 4.714l-.127 1.019zm.258-2.054c-1.723-.71-3.098-2.085-3.807-3.807l1.041-.13c.596 1.272 1.623 2.299 2.895 2.896l-.129 1.041zm8.095-9.007c-.598-1.272-1.625-2.3-2.896-2.896l.131-1.041c1.721.71 3.096 2.085 3.807 3.807l-1.042.13zm2.049-.256c-.814-2.157-2.529-3.869-4.691-4.677l.129-1.019c2.613.896 4.68 2.958 5.582 5.568l-1.02.128z"/>
-              </g>
-            </svg>
-          <% end %>
-        </div>
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fad"
+                data-icon="login"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xml:space="preserve"
+                version="1.1"
+                style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;"
+                viewBox="0 0 399.88 456.4375" x="0px" y="0px"
+                class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
+                >
+
+                <g class="fa-group">
+                  <path
+                    class="fa-primary"
+                    fill="currentColor"
+                    d="M300.77 73.2l0 -9.73c0,-3.89 3.17,-7.07 7.07,-7.07l28.51 0c3.89,0 7.07,3.18 7.07,7.07l0 41.42 53.6 39.82c3.12,2.32 3.78,6.76 1.46,9.88l-16.9 22.8c-2.32,3.13 -6.77,3.79 -9.89,1.46l-23.09 -17.15 0 160.18c0,23.79 -19.47,43.26 -43.26,43.26l-57.88 0 0 -127.33c0,-8.72 -7.13,-15.85 -15.84,-15.85l-63.36 0c-8.71,0 -15.84,7.13 -15.84,15.85l0 127.33 -57.88 0c-23.79,0 -43.26,-19.47 -43.26,-43.26l0 -160.18 -23.09 17.15c-3.12,2.33 -7.57,1.67 -9.89,-1.46l-16.9 -22.8c-2.32,-3.12 -1.66,-7.56 1.46,-9.88l192.87 -143.29c2.54,-1.89 5.88,-1.89 8.42,0l96.62 71.78z"/>
+                </g>
+              </svg>
+              <span class="link-text">Home</span>
+            <% end %>
+          </div>
       </li>
       <li class="nav-item">
-      <div  class="nav-link">
+      <div  class="nav-link" id="loggin-navbar">
         <% if user_signed_in? %>
-            <div class="avatar">
-              <div class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="avatar">
+              <div class="dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <%= cl_image_tag current_user.photo.key, width: 50, height: 50, crop: :fill %>
               </div>
+              <%# <div class='desktop-display'>
+                <span class="link-text">Login</span>
+              </div> %>
               <div class="dropdown-menu">
-                  
+
                 <%= link_to "My Requests",  rentings_path , class: "dropdown-item" %>
                 <%= link_to "My Vinyls", owner_vinyls_path, class: "dropdown-item" %>
                 <%= link_to "Logout", destroy_user_session_path , class: "dropdown-item", method: :delete %>
@@ -108,47 +210,42 @@
         <% else %>
           <%= link_to new_user_session_path do %>
             <div class="nav-link">
-              <svg 
+              <svg
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fad"
                 data-icon="login"
                 role="img"
-                xmlns="http://www.w3.org/2000/svg" 
-                xmlns:xlink="http://www.w3.org/1999/xlink" 
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
                 xml:space="preserve"
-                version="1.1" 
-                x="0px" y="0px" 
-                viewBox="0 0 100 125" 
-                style="enable-background:new 0 0 100 100;" 
+                version="1.1"
+                x="0px" y="0px"
+                viewBox="0 0 100 125"
+                style="enable-background:new 0 0 100 100;"
                 class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
                   >
                 <g class="fa-group">
                   <g class="fa-group">
-                    <circle 
+                    <circle
                     class="fa-primary"
-                    fill="currentColor" 
-                    cx="50" 
-                    cy="34.6" 
+                    fill="currentColor"
+                    cx="50"
+                    cy="34.6"
                     r="15.5" />
                   </g>
                   <g>
-                    <path 
+                    <path
                     class="fa-primary"
                     fill="currentColor"
                     d="M25.3,72c-1.8,4.4,1.4,9.3,6.2,9.3h37.8c4.8,0,8-4.9,6.2-9.3c-4.7-11.2-14.2-18.8-25.1-18.8S29.9,60.8,25.3,72z" />
                   </g>
                 </g>
               </svg>
-           
-                <span class="link-text">Login</span>
-
+            <span class="link-text">Login</span>
           <% end %>
         <% end %>
         </div>
       </li>
     </ul>
   </nav>
-
-        
-    
