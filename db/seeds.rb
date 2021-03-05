@@ -257,7 +257,7 @@ christophe_vinyl_9.save!
 #10
 christophe_vinyl_10 = Vinyl.new(
   title: "Illusions",
-  artist: "IBRAHIM MAALOUF",
+  artist: "Ibrahim Maalouf",
   price_per_day: 8,
   description: "L’envie de traiter le thème de l’illusion m’est apparue dès ma première désillusion.",
   condition: "Good",
