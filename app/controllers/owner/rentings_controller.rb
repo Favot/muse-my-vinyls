@@ -7,7 +7,6 @@ class Owner::RentingsController < ApplicationController
     @pending_incoming_rentings = @incoming_rentings.where(status: 'Pending')
     @accepted_incoming_rentings = @incoming_rentings.where(status: 'Accepted')
     @declined_incoming_rentings = @incoming_rentings.where(status: 'Declined')
-    #raise
   end
 
   def validate
