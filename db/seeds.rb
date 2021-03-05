@@ -106,9 +106,10 @@ lise_vinyl_2.photo.attach(io: file, filename: 'mothership.jpg', content_type: 'i
 
 lise_vinyl_2.save!
 
+#1
 christophe_vinyl_1 = Vinyl.new(
   title: "Ella and Louis",
-  artist: "Louis Armstrong & Ella Fitzgerald ",
+  artist: "Louis Armstrong & Ella Fitzgerald",
   price_per_day: 5,
   description: "A must-have in any jazz lover's collection.",
   condition: "Acceptable",
@@ -121,11 +122,10 @@ christophe_vinyl_1.photo.attach(io: file, filename: 'ellalouis.jpg', content_typ
 
 christophe_vinyl_1.save!
 
-
-
+#2
 christophe_vinyl_2 = Vinyl.new(
   title: "My Funny Valentine",
-  artist: "Chet Baker ",
+  artist: "Chet Baker",
   price_per_day: 7,
   description: "Excellent album!",
   condition: "Acceptable",
@@ -139,9 +139,7 @@ christophe_vinyl_2.photo.attach(io: file, filename: 'chetbaker.jpg', content_typ
 
 christophe_vinyl_2.save!
 
-
-
-
+#3
 christophe_vinyl_3 = Vinyl.new(
   title: "Kind of Blue (Import)",
   artist: "Miles Davis",
@@ -151,15 +149,13 @@ christophe_vinyl_3 = Vinyl.new(
   owner: christophe
 )
 
-
-
 file  = File.open(Rails.root.join('db/media/vinyls/milesdavis.jpg'))
 
 christophe_vinyl_3.photo.attach(io: file, filename: 'milesdavis.jpg', content_type: 'image/jpeg')
 
 christophe_vinyl_3.save!
 
-
+#4
 christophe_vinyl_4 = Vinyl.new(
   title: "I Put a Spell on You",
   artist: "Nina Simone",
@@ -175,14 +171,14 @@ christophe_vinyl_4.photo.attach(io: file, filename: 'ninasimone.jpg', content_ty
 
 christophe_vinyl_4.save!
 
-
-
+# start example
+#5
 christophe_vinyl_5 = Vinyl.new(
   title: "Alive",
   artist: "Daft Punk",
   price_per_day: 9,
   description: "Deluxe edition, signed by the artists!! A unique piece of art.",
-  condition: "Like new",
+  condition: "Acceptable",
   owner: christophe
 )
 
@@ -191,6 +187,90 @@ file  = File.open(Rails.root.join('db/media/vinyls/alive.jpg'))
 christophe_vinyl_5.photo.attach(io: file, filename: 'alive.jpg', content_type: 'image/jpeg')
 
 christophe_vinyl_5.save!
+
+# end example
+
+#6
+christophe_vinyl_6 = Vinyl.new(
+  title: "Blue train - New edition",
+  artist: "John Coltrane",
+  price_per_day: 6,
+  description: "John Coltrane's first masterpiece (1957)",
+  condition: "Like new",
+  owner: christophe
+)
+
+file  = File.open(Rails.root.join('db/media/vinyls/Blue-train.jpg'))
+
+christophe_vinyl_6.photo.attach(io: file, filename: 'Blue-train.jpg', content_type: 'image/jpeg')
+
+christophe_vinyl_6.save!
+
+#7
+christophe_vinyl_7 = Vinyl.new(
+  title: "Closer to the Source",
+  artist: "Dizzy Gillespie",
+  price_per_day: 6,
+  description: "This set of commercial material (with guest spots by Stevie Wonder, tenor saxophonist Branford Marsalis and bassist Marcus Miller)",
+  condition: "Good",
+  owner: christophe
+)
+
+file  = File.open(Rails.root.join('db/media/vinyls/dizzie.jpg'))
+
+christophe_vinyl_7.photo.attach(io: file, filename: 'dizzie.jpg', content_type: 'image/jpeg')
+
+christophe_vinyl_7.save!
+
+#8
+christophe_vinyl_8 = Vinyl.new(
+  title: "Wynton Marsalis' First Recordings",
+  artist: "Wynton Marsalis",
+  price_per_day: 5,
+  description: "Recorded at Bubba's Jazz Restaurant",
+  condition: "Acceptable",
+  owner: christophe
+)
+
+file  = File.open(Rails.root.join('db/media/vinyls/winton.jpg'))
+
+christophe_vinyl_8.photo.attach(io: file, filename: 'winton.jpg', content_type: 'image/jpeg')
+
+christophe_vinyl_8.save!
+
+#9
+christophe_vinyl_9 = Vinyl.new(
+  title: "Monk.",
+  artist: "Thelonious Monk",
+  price_per_day: 4,
+  description: "Monk is an album of the jazz pianist Thelonious Monk released in 1954 on the Prestige label.",
+  condition: "Acceptable",
+  owner: christophe
+)
+
+file  = File.open(Rails.root.join('db/media/vinyls/monk.jpg'))
+
+christophe_vinyl_9.photo.attach(io: file, filename: 'monk.jpg', content_type: 'image/jpeg')
+
+christophe_vinyl_9.save!
+
+#10
+christophe_vinyl_10 = Vinyl.new(
+  title: "Illusions",
+  artist: "Ibrahim Maalouf",
+  price_per_day: 8,
+  description: "The desire to deal with the theme of illusion appeared to the artist from his first disillusionment.",
+  condition: "Good",
+  owner: christophe
+)
+
+file  = File.open(Rails.root.join('db/media/vinyls/maalouf.jpg'))
+
+christophe_vinyl_10.photo.attach(io: file, filename: 'maalouf.jpg', content_type: 'image/jpeg')
+
+christophe_vinyl_10.save!
+
+#bastien vinyls
 
 bastien_vinyl_1 = Vinyl.new(
   title: "Random access memories",
@@ -222,6 +302,7 @@ bastien_vinyl_2.photo.attach(io: file, filename: 'discovery.jpg', content_type: 
 
 bastien_vinyl_2.save!
 
+#1
 corentin_vinyl_1 = Vinyl.new(
   title: "Untouchables",
   artist: "Korn",
@@ -236,6 +317,56 @@ file  = File.open(Rails.root.join('db/media/vinyls/korn.jpg'))
 corentin_vinyl_1.photo.attach(io: file, filename: 'korn.jpg', content_type: 'image/jpeg')
 
 corentin_vinyl_1.save!
+
+#2
+corentin_vinyl_2 = Vinyl.new(
+  title: "Anarchy",
+  artist: "Busta Rhymes",
+  price_per_day: 6,
+  description: "The album ranked 1st in the Top R&B/Hip-Hop Albums and 4th in the Billboard 2006.",
+  condition: "Acceptable",
+  owner: corentin
+)
+
+file  = File.open(Rails.root.join('db/media/vinyls/busta.jpg'))
+
+corentin_vinyl_2.photo.attach(io: file, filename: 'busta.jpg', content_type: 'image/jpeg')
+
+corentin_vinyl_2.save!
+
+#3
+corentin_vinyl_3 = Vinyl.new(
+  title: "Blackout!",
+  artist: "Method Man & Redman",
+  price_per_day: 7,
+  description: "The album is certified platinum only three months after its release.",
+  condition: "Like new",
+  owner: corentin
+)
+
+file  = File.open(Rails.root.join('db/media/vinyls/redman.jpg'))
+
+corentin_vinyl_3.photo.attach(io: file, filename: 'redman.jpg', content_type: 'image/jpeg')
+
+corentin_vinyl_3.save!
+
+#4
+corentin_vinyl_4 = Vinyl.new(
+  title: "Bloodlust",
+  artist: "Body Count",
+  price_per_day: 7,
+  description: "Bloodlust is the sixth studio album by American heavy metal band Body Count",
+  condition: "Acceptable",
+  owner: corentin
+)
+
+file  = File.open(Rails.root.join('db/media/vinyls/Bloodlust.jpg'))
+
+corentin_vinyl_4.photo.attach(io: file, filename: 'Bloodlust.jpg', content_type: 'image/jpeg')
+
+corentin_vinyl_4.save!
+
+
 
 puts "Seeding some rentings..."
 
