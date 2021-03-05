@@ -27,9 +27,8 @@
       <h2 class="card-renting-pricing"><%= renting.total_price %>€</h2>
     </div>
 
-    <!-- Btns -->
+    <!-- Btns for Pending request only -->
     <% if renting.status == 'Pending' %>
-    <% end %>
       <div id="validation-btn">
         <%= link_to decline_owner_renting_path(renting), method: :patch, class: "btn", id: "decline-btn" do %>
           <p><i class="fas fa-times-circle"></i> Decline</p>
@@ -38,7 +37,7 @@
           <p><i class="fas fa-check-circle"></i> Accept</p>
         <% end %>
       </div>
-
+    <% end %>
 
   </div>
 <% end %>
