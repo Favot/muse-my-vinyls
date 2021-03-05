@@ -1,7 +1,7 @@
-
+<div class="home-container">
 <div class="container d-flex justify-content-center">
 
-  <div class="card text-white bg-dark mt-2 col-12 col-lg-6 offset_2">
+  <div class="card">
     <!-- vinyl.photo -->
       <% if @vinyl.photo.attached? %>
         <%= cl_image_tag @vinyl.photo.key, crop: :fill,class: "img-vinyl" %>
@@ -23,14 +23,20 @@
         <%= simple_form_for [ @vinyl, @renting ] do |f| %>
           <%= f.input :start_date, as: :date, html5: true %>
           <%= f.input :end_date, as: :date, html5: true %>
-          <%= f.submit "Request", class: "btn btn-success", id: "total-price", data: { 'price-per-day': @vinyl.price_per_day } %>
+        <div class="btn-show-outside">
+          <div class="form-actions">
+            <%= f.submit "Request", class: "auth-btn btn btn-success", id: "total-price", data: { 'price-per-day': @vinyl.price_per_day } %>
+          </div>
+        </div> 
         <% end %>
-        <!-- <p data-price-per-day="<%= @vinyl.price_per_day %>" id="total-price">Total price:</p> -->        <%= link_to 'Cancel', vinyls_path, class: "btn btn-outline-dark mt-2" %>
-      </div>
+        <div class="btn-show-outside">
+        <%= link_to 'Cancel', vinyls_path, class: "btn btn-outline-dark mt-2" %>
+        </div>
+       </div>
   </div>
 </div>
 </div>
-
+</div>
 
 <!-- add eventlistener sur chaque input -->
 <!-- si les input sont remplis on récupère la value -->
