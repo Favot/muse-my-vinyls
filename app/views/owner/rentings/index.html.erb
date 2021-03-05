@@ -54,16 +54,25 @@
     <!-- Sub Tabs Content  -->
     <div class="tab-content" id="myTabContent">
       <!-- Display Pending -->
+       <div class="vinyls-list">
       <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
+     
         <%= render 'shared/rentings_validation', data: @pending_incoming_rentings %>
+        </div>
       </div>
       <!-- Display Accepted -->
+        <div class="vinyls-list">
       <div class="tab-pane fade" id="accepted" role="tabpanel" aria-labelledby="accepted-tab">
+    
         <%= render 'shared/rentings_validation', data: @accepted_incoming_rentings %>
+        </div>
       </div>
       <!-- Display Declined -->
+      <div class="vinyls-list">
       <div class="tab-pane fade" id="declined" role="tabpanel" aria-labelledby="declined-tab">
+      
         <%= render 'shared/rentings_validation', data: @declined_incoming_rentings %>
+        </div>
       </div>
     </div>
     <!-- /3 -->
