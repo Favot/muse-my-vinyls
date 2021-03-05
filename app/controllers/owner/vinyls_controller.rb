@@ -2,6 +2,10 @@ module Owner
   class VinylsController < OwnerController
     before_action :authenticate_user!
 
+    def index
+      @vinyls = Vinyl.where(owner: current_user)
+    end
+
     def new
       @vinyl = Vinyl.new
     end
@@ -12,7 +16,7 @@ module Owner
       @vinyl.owner = current_user
       p @vinyl
       if @vinyl.save!
-        flash[:alert] = 'Your Vinyl as been had!'
+        flash[:alert] = 'Your vinyl has been added!'
         # when possible redirect to 'All requests'
         redirect_to owner_vinyls_path
       else

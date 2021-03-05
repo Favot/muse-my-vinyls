@@ -42,10 +42,48 @@
 }
 
 .btn-outline-dark {
-  border: solid white 1px;
-  color: white;
+  border: 2px solid rgb(83, 82, 82) 1px;
+  background-color: gray;
 }
 
 .btn-outline-dark:hover {
   background-color: grey;
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .card {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .card img {
+    vertical-align: middle;
+    border-style: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+  .text-white {
+    color: #fff !important;
+  }
+  .card {
+    display: flex;
+    border-radius: 8px;
+    padding: 8px;
+  }
+
+  .img-vinyl {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .show-desktop {
+    display: flex;
+    margin-left: 6rem;
+    padding: 16px;
+    height: 80vh;
+  }
 }

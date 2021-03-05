@@ -39,7 +39,7 @@
   height: 5rem;
   color: var(--text-primary);
   text-decoration: none;
-  filter: grayscale(100%) opacity(0.7);
+  filter: grayscale(25%) opacity(0.85);
   transition: var(--transition-speed);
   cursor: pointer;
 }
@@ -56,17 +56,17 @@
 }
 
 .nav-link svg {
-  width: 2rem;
-  min-width: 2rem;
   margin: 0 1.5rem;
+  height: 40px;
+  width: 40px;
 }
 
 .fa-primary {
-  color: #ff7eee;
+  color: #e9e1e8;
 }
 
 .fa-secondary {
-  color: #df49a6;
+  color: #dfd4db;
 }
 
 .fa-primary,
@@ -113,10 +113,16 @@
     bottom: 0;
     width: 100vw;
     height: 5rem;
+    padding: 0px;
   }
 
   .logo {
     display: none;
+  }
+
+  .nav-item {
+    width: 100%;
+    height: 100%;
   }
 
   .navbar-nav {
@@ -126,6 +132,37 @@
 
   .nav-link {
     justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 0px !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-link > a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-link {
+    .avatar {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dropdown-toggle {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   main {
@@ -152,6 +189,12 @@
     z-index: 100000000;
   }
 
+  .navbar-svg {
+    height: 45px;
+    width: 45px;
+    display: flex;
+  }
+
   .dropdown-toggle::after {
     border-top: 0px;
 
@@ -176,6 +219,12 @@
   .dropdown-menu {
     bottom: 91.6px;
     top: -101px;
+  }
+
+  #add-vinyls {
+    height: 100%;
+    width: 100%;
+    display: flex;
   }
 }
 
