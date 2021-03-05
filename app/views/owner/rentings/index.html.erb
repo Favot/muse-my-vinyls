@@ -1,30 +1,35 @@
-<div class="home-container">
-
-
 <!-- Profile -->
-<%= render 'shared/profile' %>
+<%= cl_image_tag current_user.photo.key, width: 140, height: 140, crop: :fill, class: "big-avatar-square" %>
+<h4 class="text-center">
+  <%= current_user.first_name.capitalize %>
+  <%= current_user.last_name.capitalize %>
+</h4>
 
 <!-- Main Tabs Menu (w/o JS file) -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item-big">
-    <a class="nav-link active" id="submitted-tab" data-toggle="tab" href="#submitted" role="tab" aria-controls="submitted" aria-selected="true">
+    <a class="nav-link" id="submitted-tab" data-toggle="tab" href="#submitted" role="tab" aria-controls="submitted" aria-selected="false">
       Submitted
     </a>
+    <!-- Hidden Btn -->
+    <%= link_to '', rentings_path, class: "btn", id: "hidden-btn" %>
   </li>
   <li class="nav-item-big">
-    <a class="nav-link" id="incoming-tab" data-toggle="tab" href="#incoming" role="tab" aria-controls="incoming" aria-selected="false">
+    <a class="nav-link active" id="incoming-tab" data-toggle="tab" href="#incoming" role="tab" aria-controls="incoming" aria-selected="true">
       Incoming
     </a>
-    <!-- Hidden Btn -->
-    <%= link_to '', owner_rentings_path, class: "btn", id: "hidden-btn" %>
   </li>
 </ul>
 
 <!-- 1 Main Tabs Content -->
 <div class="tab-content">
 
-  <!-- 2 Main Tabs Content (submitted) -->
-  <div class="tab-pane active" id="submitted" role="tabpanel" aria-labelledby="submitted-tab">
+  <!-- Main Tabs Content (submitted)
+  <div class="tab-pane" id="submitted" role="tabpanel" aria-labelledby="submitted-tab">
+  </div> -->
+
+  <!-- 2 Main Tabs Content (incoming) -->
+  <div class="tab-pane active" id="incoming" role="tabpanel" aria-labelledby="incoming-tab">
 
     <!-- 3 Sub Tabs Menu (w/ tabs.js) -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -48,15 +53,15 @@
     <div class="tab-content" id="myTabContent">
       <!-- Display Pending -->
       <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
-        <%= render 'shared/rentings', data: @pending_rentings %>
+        <%= render 'shared/rentings_validation', data: @pending_incoming_rentings %>
       </div>
       <!-- Display Accepted -->
       <div class="tab-pane fade" id="accepted" role="tabpanel" aria-labelledby="accepted-tab">
-        <%= render 'shared/rentings', data: @accepted_rentings %>
+        <%= render 'shared/rentings_validation', data: @accepted_incoming_rentings %>
       </div>
       <!-- Display Declined -->
       <div class="tab-pane fade" id="declined" role="tabpanel" aria-labelledby="declined-tab">
-        <%= render 'shared/rentings', data: @declined_rentings %>
+        <%= render 'shared/rentings_validation', data: @declined_incoming_rentings %>
       </div>
     </div>
     <!-- /3 -->
@@ -64,8 +69,5 @@
   </div>
   <!-- /2 -->
 
-  <!-- Main Tabs Content (incoming)
-  <div class="tab-pane" id="incoming" role="tabpanel" aria-labelledby="incoming-tab">
-  </div> -->
-
 </div>
+<!-- /1 -->
