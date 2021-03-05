@@ -1,9 +1,22 @@
-#hidden-btn{
-  opacity: 0;
-  position: absolute;
-  width: 50%;
-  height: 40px;
-  top: 217px;
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  #hidden-btn{
+    opacity: 0;
+    position: absolute;
+    width: 50%;
+    height: 30px;
+    top: 213px;
+  }
+}
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  #hidden-btn{
+    opacity: 0;
+    position: absolute;
+    width: 45%;
+    height: 41px;
+    top: 216px;
+  }
 }
 
 #validation-btn{
