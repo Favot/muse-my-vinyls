@@ -425,5 +425,16 @@ renting_5 = Renting.create!(
   total_price: total_price
 )
 
+total_price = 6 * christophe_vinyl_10.price_per_day
+
+renting_6 = Renting.create!(
+  renter: bastien,
+  vinyl: christophe_vinyl_10,
+  start_date: Date.today,
+  end_date: Date.today + 6,
+  status: "Pending",
+  total_price: total_price
+)
+
 puts "Finished!"
 
