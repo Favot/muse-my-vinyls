@@ -3,7 +3,7 @@ class Owner::RentingsController < ApplicationController
   before_action :set_renting, only: [:decline, :validate]
 
   def index
-    @incoming_rentings = Renting.includes(:vinyl).where(vinyls: { owner: current_user })
+    @incoming_rentings = Renting.includes(:vinyl).where(vinyls: { owner: current_user }).order(updated_at: :desc)
     @pending_incoming_rentings = @incoming_rentings.where(status: 'Pending')
     @accepted_incoming_rentings = @incoming_rentings.where(status: 'Accepted')
     @declined_incoming_rentings = @incoming_rentings.where(status: 'Declined')
