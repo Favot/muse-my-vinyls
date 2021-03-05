@@ -7,18 +7,22 @@
 
 <!-- Main Tabs Menu (w/o JS file) -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item-big">
-    <a class="nav-link active" id="submitted-tab" data-toggle="tab" href="#submitted" role="tab" aria-controls="submitted" aria-selected="true">
-      Submitted
-    </a>
-  </li>
-  <li class="nav-item-big">
-    <a class="nav-link" id="incoming-tab" data-toggle="tab" href="#incoming" role="tab" aria-controls="incoming" aria-selected="false">
-      Incoming
-    </a>
-    <!-- Hidden Btn -->
-    <%= link_to '', owner_rentings_path, class: "btn", id: "hidden-btn" %>
-  </li>
+  <div id="active-tab-border">
+    <li class="nav-item-big">
+      <a class="nav-link active" id="submitted-tab" data-toggle="tab" href="#submitted" role="tab" aria-controls="submitted" aria-selected="true">
+        Submitted
+      </a>
+    </li>
+  </div>
+  <div id="no-active-tab-border">
+    <li class="nav-item-big">
+      <a class="nav-link" id="incoming-tab" data-toggle="tab" href="#incoming" role="tab" aria-controls="incoming" aria-selected="false">
+        Incoming
+      </a>
+      <!-- Hidden Btn -->
+      <%= link_to '', owner_rentings_path, class: "btn", id: "hidden-btn" %>
+    </li>
+  </div>
 </ul>
 
 <!-- 1 Main Tabs Content -->
