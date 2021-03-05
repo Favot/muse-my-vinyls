@@ -38,7 +38,11 @@
                 <span class="link-text">Add Vinyls</span>
               <% end %>
           <% else %>
+          <div class="nav-link ">
+            <div class="desktop-no-display">
+
             <%= link_to new_user_session_path do %>
+
               <svg
               aria-hidden="true"
               focusable="false"
@@ -61,9 +65,11 @@
               </g>
               </svg>
               <span class="link-text">Add Vinyls</span>
+            </div>
             <% end %>
           <% end %>
         </div>
+      </div>
       </li>
       <% if user_signed_in? %>
         <li class="nav-item desktop-display">
