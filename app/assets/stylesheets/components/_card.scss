@@ -50,6 +50,16 @@
   background-color: grey;
 }
 
+@media only screen and (max-width: 600px) {
+  .card {
+    margin-bottom: 6rem;
+  }
+
+  .owner-view {
+    margin-bottom: 6rem;
+  }
+}
+
 /* Large screens */
 @media only screen and (min-width: 600px) {
   .card {
