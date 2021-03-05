@@ -109,7 +109,7 @@ lise_vinyl_2.save!
 #1
 christophe_vinyl_1 = Vinyl.new(
   title: "Ella and Louis",
-  artist: "Louis Armstrong & Ella Fitzgerald ",
+  artist: "Louis Armstrong & Ella Fitzgerald",
   price_per_day: 5,
   description: "A must-have in any jazz lover's collection.",
   condition: "Acceptable",
@@ -125,7 +125,7 @@ christophe_vinyl_1.save!
 #2
 christophe_vinyl_2 = Vinyl.new(
   title: "My Funny Valentine",
-  artist: "Chet Baker ",
+  artist: "Chet Baker",
   price_per_day: 7,
   description: "Excellent album!",
   condition: "Acceptable",
@@ -192,10 +192,10 @@ christophe_vinyl_5.save!
 
 #6
 christophe_vinyl_6 = Vinyl.new(
-  title: "Blue train - Nouvelle édition",
+  title: "Blue train - New edition",
   artist: "John Coltrane",
   price_per_day: 6,
-  description: "Le premier chef-d'ouvre de John Coltrane (1957)",
+  description: "John Coltrane's first masterpiece (1957)",
   condition: "Like new",
   owner: christophe
 )
@@ -227,7 +227,7 @@ christophe_vinyl_8 = Vinyl.new(
   title: "Wynton Marsalis' First Recordings",
   artist: "Wynton Marsalis",
   price_per_day: 5,
-  description: "Enregistré à Bubba's Jazz Restaurant",
+  description: "Recorded at Bubba's Jazz Restaurant",
   condition: "Acceptable",
   owner: christophe
 )
@@ -243,7 +243,7 @@ christophe_vinyl_9 = Vinyl.new(
   title: "Monk.",
   artist: "Thelonious Monk",
   price_per_day: 4,
-  description: "Monk est un album du pianiste de jazz Thelonious Monk sorti en 1954 sur le label Prestige",
+  description: "Monk is an album of the jazz pianist Thelonious Monk released in 1954 on the Prestige label.",
   condition: "Acceptable",
   owner: christophe
 )
@@ -259,7 +259,7 @@ christophe_vinyl_10 = Vinyl.new(
   title: "Illusions",
   artist: "Ibrahim Maalouf",
   price_per_day: 8,
-  description: "L’envie de traiter le thème de l’illusion m’est apparue dès ma première désillusion.",
+  description: "The desire to deal with the theme of illusion appeared to the artist from his first disillusionment.",
   condition: "Good",
   owner: christophe
 )
@@ -323,7 +323,7 @@ corentin_vinyl_2 = Vinyl.new(
   title: "Anarchy",
   artist: "Busta Rhymes",
   price_per_day: 6,
-  description: "L'album s'est classé 1er au Top R&B/Hip-Hop Albums et 4e au Billboard 2006 ",
+  description: "The album ranked 1st in the Top R&B/Hip-Hop Albums and 4th in the Billboard 2006.",
   condition: "Acceptable",
   owner: corentin
 )
@@ -337,9 +337,9 @@ corentin_vinyl_2.save!
 #3
 corentin_vinyl_3 = Vinyl.new(
   title: "Blackout!",
-  artist: " Method Man & Redman",
+  artist: "Method Man & Redman",
   price_per_day: 7,
-  description: "l'album est certifié disque de platine, seulement trois mois après sa sortie.",
+  description: "The album is certified platinum only three months after its release.",
   condition: "Like new",
   owner: corentin
 )
