@@ -1,40 +1,44 @@
-<div class="form-auth">
-    <h2>Add A Vinyl</h2>
+<div class="home-container">
 
-<%= simple_form_for [:owner, @vinyl]   do |f| %>
-  <%= f.error_notification %>
+  <div class="form-auth">
+      <h2>Add A Vinyl</h2>
 
-  <div class="form-inputs">
-    <%= f.input  :title,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Title" }%>
-    <%= f.input  :artist,
-                required: true,
-                input_html: { autocomplete: "Artist" } %>
-    <%= f.input  :price_per_day,
+  <%= simple_form_for [:owner, @vinyl]   do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input  :title,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "Title" }%>
+      <%= f.input  :artist,
+                  required: true,
+                  input_html: { autocomplete: "Artist" } %>
+      <%= f.input  :price_per_day,
+                  
+                  required: true,
+                  input_html: { autocomplete: "Price per day" } %>
+      <%= f.input :description,
+                  required: true,
+                  input_html: { autocomplete: "Description" } %>
+  
+      <%= f.input :condition,  collection: Vinyl::CONDITION %> 
+
+                  
+      <%= f.input :photo,
+                  as: :file,
+                  required: true,
+                  input_html: { autocomplete: "Album Photo" } %>
+
                 
-                required: true,
-                input_html: { autocomplete: "Price per day" } %>
-    <%= f.input :description,
-                required: true,
-                input_html: { autocomplete: "Description" } %>
- 
-    <%= f.input :condition,  collection: Vinyl::CONDITION %> 
-
-                
-    <%= f.input :photo,
-                as: :file,
-                required: true,
-                input_html: { autocomplete: "Album Photo" } %>
-
-              
-  </div>
-  <div class="outside-btn">
-    <div class="form-actions btn btn-success auth-btn">
-      <%= f.button :submit, "Add" %>
     </div>
+    <div class="outside-btn">
+      <div class="form-actions btn btn-success auth-btn">
+        <%= f.button :submit, "Add" %>
+      </div>
+    </div>
+  <% end %>
+
   </div>
-<% end %>
 
 </div>
