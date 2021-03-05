@@ -5,3 +5,49 @@
   height: 40px;
   top: 217px;
 }
+
+#validation-btn{
+  display: flex;
+  margin: 5px;
+}
+
+#accept-btn{
+  flex-grow: 1;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 2px;
+
+  i{
+    color: #1EDD88;
+  }
+}
+
+#accept-btn:active, #accept-btn:hover{
+  border: 1px solid #1EDD88;
+  background-color: #1EDD88;
+
+  p, i{
+    color: black;
+  }
+}
+
+#decline-btn{
+  flex-grow: 1;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 2px;
+
+  i{
+    color: red;
+  }
+}
+
+#decline-btn:hover, #decline-btn:active{
+  border: 1px solid red;
+  background-color: red;
+
+  p, i{
+    color: white;
+  }
+}
+
+
+
