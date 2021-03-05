@@ -33,6 +33,10 @@
   width: 100%;
 }
 
+.nav-item:first-child svg{
+  display: none;
+}
+
 .nav-link {
   display: flex;
   align-items: center;
@@ -60,6 +64,7 @@
   height: 40px;
   width: 40px;
 }
+
 
 .fa-primary {
   color: #e9e1e8;
@@ -107,6 +112,10 @@
 .avatar img {
   border-radius: 50%;
 }
+
+// .fa-9x {
+//     display: none;
+// }
 
 /* Small screens */
 @media only screen and (max-width: 600px) {
