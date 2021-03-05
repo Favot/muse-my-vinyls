@@ -4,3 +4,9 @@
   right: 16px;
   z-index: 1000;
 }
+
+@media only screen and (max-width: 600px) {
+  .alert {
+    bottom: 70px;
+  }
+}
