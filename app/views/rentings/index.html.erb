@@ -1,20 +1,16 @@
-<!-- Profile -->
-<%= cl_image_tag current_user.photo.key, width: 140, height: 140, crop: :fill, class: "big-avatar-square" %>
-<h4 class="text-center">
-  <%= current_user.first_name.capitalize %>
-  <%= current_user.last_name.capitalize %>
-</h4>
+<div class="owner-view">
+  <!-- Profile -->
+  <%= render 'shared/profile' %>
 
-<!-- Main Tabs Menu (w/o JS file) -->
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <div id="active-tab-border">
+
+  <!-- Main Tabs Menu (w/o JS file) -->
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item-big">
       <a class="nav-link active" id="submitted-tab" data-toggle="tab" href="#submitted" role="tab" aria-controls="submitted" aria-selected="true">
         Submitted
       </a>
     </li>
-  </div>
-  <div id="no-active-tab-border">
+
     <li class="nav-item-big">
       <a class="nav-link" id="incoming-tab" data-toggle="tab" href="#incoming" role="tab" aria-controls="incoming" aria-selected="false">
         Incoming
@@ -22,56 +18,57 @@
       <!-- Hidden Btn -->
       <%= link_to '', owner_rentings_path, class: "btn", id: "hidden-btn" %>
     </li>
-  </div>
-</ul>
+  </ul>
 
 <!-- 1 Main Tabs Content -->
-<div class="tab-content">
+  <div class="tab-content">
 
-  <!-- 2 Main Tabs Content (submitted) -->
-  <div class="tab-pane active" id="submitted" role="tabpanel" aria-labelledby="submitted-tab">
-
-    <!-- 3 Sub Tabs Menu (w/ tabs.js) -->
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" type="button" role="tab" aria-controls="pending" aria-selected="true">
-          Pending
-        </button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="accepted-tab" data-bs-toggle="tab" data-bs-target="#accepted" type="button" role="tab" aria-controls="accepted" aria-selected="false">
-          Accepted
-        </button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="declined-tab" data-bs-toggle="tab" data-bs-target="#declined" type="button" role="tab" aria-controls="declined" aria-selected="false">
-          Declined
-        </button>
-      </li>
-    </ul>
-    <!-- Sub Tabs Content  -->
-    <div class="tab-content" id="myTabContent">
-      <!-- Display Pending -->
-      <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
-        <%= render 'shared/rentings', data: @pending_rentings %>
+    <!-- 2 Main Tabs Content (submitted) -->
+    <div class="tab-pane active" id="submitted" role="tabpanel" aria-labelledby="submitted-tab">
+      <!-- 3 Sub Tabs Menu (w/ tabs.js) -->
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" type="button" role="tab" aria-controls="pending" aria-selected="true">
+            Pending
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="accepted-tab" data-bs-toggle="tab" data-bs-target="#accepted" type="button" role="tab" aria-controls="accepted" aria-selected="false">
+            Accepted
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="declined-tab" data-bs-toggle="tab" data-bs-target="#declined" type="button" role="tab" aria-controls="declined" aria-selected="false">
+            Declined
+          </button>
+        </li>
+      </ul>
+      <!-- Sub Tabs Content  -->
+      <div class="tab-content" id="myTabContent">
+        <!-- Display Pending -->
+        <div class="vinyls-list">
+          <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
+            <%= render 'shared/rentings', data: @pending_rentings %>
+          </div>
+        </div>
+        <!-- Display Accepted -->
+        <div class="vinyls-list">
+          <div class="tab-pane fade" id="accepted" role="tabpanel" aria-labelledby="accepted-tab">
+            <%= render 'shared/rentings', data: @accepted_rentings %>
+          </div>
+        </div>
+        <!-- Display Declined -->
+        <div class="vinyls-list">
+          <div class="tab-pane fade" id="declined" role="tabpanel" aria-labelledby="declined-tab">
+            <%= render 'shared/rentings', data: @declined_rentings %>
+          </div>
+        </div>
       </div>
-      <!-- Display Accepted -->
-      <div class="tab-pane fade" id="accepted" role="tabpanel" aria-labelledby="accepted-tab">
-        <%= render 'shared/rentings', data: @accepted_rentings %>
-      </div>
-      <!-- Display Declined -->
-      <div class="tab-pane fade" id="declined" role="tabpanel" aria-labelledby="declined-tab">
-        <%= render 'shared/rentings', data: @declined_rentings %>
-      </div>
+      <!-- /3 -->
     </div>
-    <!-- /3 -->
+    <!-- /2 -->
 
-  </div>
-  <!-- /2 -->
-
-  <!-- Main Tabs Content (incoming)
-  <div class="tab-pane" id="incoming" role="tabpanel" aria-labelledby="incoming-tab">
-  </div> -->
-
+    <!-- Main Tabs Content (incoming)
+    <div class="tab-pane" id="incoming" role="tabpanel" aria-labelledby="incoming-tab">
+    </div> -->
 </div>
-<!-- /1 -->
